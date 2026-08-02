@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Mean, sum, max, min, median, softmax: what do PyTorch's pooling operations actually have in common?" />
+    <title>Dimensionless Operations, Part I</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="page">
+        <a class="site-title" href="../">Vardan Voskanyan</a>
+        <nav class="site-nav">
+          <a href="../">Home</a>
+          <a href="../publications/">Publications</a>
+          <a href="./" aria-current="page">Blog</a>
+        </nav>
+      </div>
+    </header>
+    <main class="page">
+      <article>
+        <h1>Dimensionless Operations, Part I</h1>
+        <p class="entry-meta">July 4, 2026</p>
+
+        <p><em>Part of a loose series on operations that don't care how big their input is. This first post lays out the ideas and pushes on them a bit; it is still a draft and does not end in a conclusion.</em></p>
+
+        <h2>The puzzle</h2>
+
+        <p>If you've ever coded a neural network in something like PyTorch, TensorFlow, JAX, or even scikit-learn, you've probably run into dimension-mismatch errors. These happen when an operation requires its input to have a specific dimension. There are, however, a few operations that don't care what the dimension of the input is, and can always be applied without error.</p>
+
+        <p><img class="figure-compact" src="images/matrixmult.png" alt="The matrix multiplication operator depends on the input dimension." /></p>
+        <p><em>Matrix multiplication is the classic counterexample: the operator itself is tied to a fixed input dimension.</em></p>
+
+        <p>In this post we want to discuss operations on vectors and tensors, common in neural networks, that can be applied regardless of dimension. The goal is to understand what unifies this type of operation.</p>
+
+        <p>So what operations are we talking about? Some of the most basic examples are the sum, mean, min, and max of a vector or tensor:</p>
+
+        <pre><code class="language-python">x.sum(), x.mean(), x.max(), x.min()</code></pre>
+
+        <p>These naturally generalise to any dimension.</p>
+
+        <p>It's worth mentioning that some of these operations, like mean, median, and std, actually depend on the dimension through normalisation; we still consider them dimensionless, though, since there's a natural way to define them consistently for any dimension.</p>
+
+        <p>Pooling layers in Convolutional Neural Networks are a typical example of operations with this property.</p>
+
+        <h2>Formalisation</h2>
+
+        <p>So far, our definition of the type of operations we're considering is purely intuitive. Here we'll try to introduce some formalism.</p>
+
+        <p>Any operation applicable to vectors of any dimension is effectively a collection of functions, one for each dimension:</p>
+
+        $$
+        \Phi = \big(\varphi_n \colon \R^n \to \R,\quad n = 1, 2, \ldots\big).
+        $$
+
+        <p>so that $\Phi$ is defined by</p>
+
+        $$
+        \Phi(x) := \varphi_n(x), \quad \forall\, x \in \R^n.
+        $$
+
+        <p>However, to make sense of this we also need some kind of consistency condition &mdash; otherwise $\varphi_n$ could be a completely unrelated function for each $n$. This turns out not to be so straightforward: what should "consistency" even mean here?</p>
+
+        <p><strong>Consistency condition:</strong> $\varphi_{n+1}$ should be "consistent with" $\varphi_n$.</p>
+
+        <h3>Embeddings</h3>
+
+        <p>One natural way to get this is to have a way to embed the lower-dimensional sets into the higher-dimensional ones. Consider a collection of mappings, which we'll call an <strong>R-system</strong>,</p>
+
+        $$
+        \mathcal{R} = \big\{\, r_{k,n} \colon \R^k \to \R^n \;\big|\; k, n \ge 1 \,\big\},
+        $$
+
+        <p>with the property that the following diagram always commutes:</p>
+
+        <p><img class="figure-compact" src="images/r-system.png" alt="Commutative triangle: R^k, R^m, and R^n connected by embeddings r_km, r_mn, and r_kn, with r_mn composed with r_km equal to r_kn." /></p>
+        <p><em>The R-system's own consistency: embedding $\R^k$ into $\R^n$ directly ($r_{k,n}$) agrees with going via any intermediate dimension $\R^m$ ($r_{m,n} \circ r_{k,m}$).</em></p>
+
+        <p>Consistency of $\varphi$ could then mean that the corresponding diagram commutes: embedding $x$ into $\R^{n+1}$ via $r_{n,n+1}$ and then applying $\varphi_{n+1}$ gives the same answer as applying $\varphi_n$ directly.</p>
+
+        <p><img class="figure-compact" src="images/phi-consistency.png" alt="Commutative triangle: R^k maps to R^n via r_kn, and both R^k and R^n map to R via phi_k and phi_n, with phi_n composed with r_kn equal to phi_k." /></p>
+        <p><em>The consistency condition for $\varphi$: embedding into $\R^n$ via $r_{k,n}$ and then applying $\varphi_n$ should agree with applying $\varphi_k$ directly.</em></p>
+
+        <p>Natural R-systems for the operations we discussed above can be defined as follows. Write $m = \operatorname{max}(x_1,\ldots,x_k)$ (similarly for min, mean); then</p>
+
+        $$
+        \begin{aligned}
+        \operatorname{max}\colon &\ r_{k,n}(x_1,\ldots,x_k) = (x_1,\ldots,x_k, m, \ldots, m) \in \R^n, \quad m = \operatorname{max}(x_1,\ldots,x_k),\\
+        \operatorname{min}\colon &\ r_{k,n}(x_1,\ldots,x_k) = (x_1,\ldots,x_k, m, \ldots, m) \in \R^n, \quad m = \operatorname{min}(x_1,\ldots,x_k),\\
+        \operatorname{mean}\colon &\ r_{k,n}(x_1,\ldots,x_k) = (x_1,\ldots,x_k, m, \ldots, m) \in \R^n, \quad m = \operatorname{mean}(x_1,\ldots,x_k),\\
+        \operatorname{sum}\colon &\ r_{k,n}(x_1,\ldots,x_k) = (x_1,\ldots,x_k, 0, \ldots, 0) \in \R^n.
+        \end{aligned}
+        $$
+
+        <p>Notice the first three pad with copies of the <em>aggregate's own value</em> &mdash; exactly why they satisfy the idempotent-padding property (appending the mean/max/min to the data doesn't change it). Sum instead pads with $0$, its identity element, not its own value: padding with its own running sum would change the answer.</p>
+
+        <h3>Recursive functions of streaming arrays</h3>
+
+        <p>In all the examples above, there's a specific way to update the result of the operation once a new coordinate is added &mdash; this is exactly what you'd use to define sum, mean, max, etc. on a streamed array rather than a fixed-size vector:</p>
+
+        $$
+        \begin{aligned}
+        &\operatorname{Sum}_{n+1}(x_1, \ldots, x_n, x_{\text{new}}) &\,=\quad &\operatorname{Sum}_n(x_1, \ldots, x_n) + x_{\text{new}} \\
+        &\operatorname{Prod}_{n+1}(x_1, \ldots, x_n, x_{\text{new}}) &\,=\quad &\operatorname{Prod}_n(x_1, \ldots, x_n) \cdot x_{\text{new}} \\
+        &\operatorname{Max}_{n+1}(x_1, \ldots, x_n, x_{\text{new}}) &\,=\quad &\operatorname{max}\big(\operatorname{Max}_n(x_1, \ldots, x_n),\, x_{\text{new}}\big)
+        \end{aligned}
+        $$
+
+        <p>So in all the examples above, the operation builds on a two-argument operation. In general, given a <strong>link function</strong> $l(a, b) \colon \R^2\to \R$, which defines how we combine the previous value with a new coordinate, we build the mapping recursively like so:</p>
+
+        $$
+        \varphi_{n+1}(x_1, \ldots, x_n, x_{\text{new}}) = l\big(\varphi_n(x_1, \ldots, x_n),\, x_{\text{new}}\big), \quad n\ge 1.
+        $$
+
+        <p>or explicitly</p>
+
+        $$
+        \varphi_n(x_1, \ldots, x_n) = l\Big(l\big(\cdots l\big(l(\varphi_1(x_1), x_2), x_3\big) \cdots, x_{n-1}\big), x_n\Big).
+        $$
+
+        <p>In the case when $\varphi_1(x) = x$, the function builds itself from its two-variable version:</p>
+
+        $$
+        \varphi_n(x_1, \ldots, x_n) = \varphi_2\Big(\varphi_2\big(\cdots \varphi_2\big(x_1, x_2\big) \cdots, x_{n-1}\big), x_n\Big).
+        $$
+
+        <p>However, this isn't quite the case for statistical quantities like the mean:</p>
+
+        $$
+        \operatorname{Mean}_{n+1}(x_1, \ldots, x_n, x_{\text{new}}) = \frac{n}{n+1}\operatorname{Mean}_n(x_1, \ldots, x_n) + \frac{1}{n+1}x_{\text{new}}
+        $$
+
+        <p>Here, the update ("link") function is a slightly adapted version of the two-variable one, depending on the dimension. This is a consequence of the issue we already noticed: the mean actually depends on the dimension through scaling. If we removed that scaling we'd just be back to the sum. We can fix this by letting the link function itself depend on the dimension &mdash; assume there's a two-variable function</p>
+
+        $$
+        l(a, b; n) \colon \R^2 \times \N \to \R
+        $$
+
+        <p>which links the versions of our operation across different dimensions via:</p>
+
+        $$
+        \varphi_{n+1}(x_1, \ldots, x_n, x_{\text{new}}) = l\big(\varphi_n(x_1, \ldots, x_n), x_{\text{new}}; n\big).
+        $$
+
+        <p>One drawback of this formulation is that it misses a property shared by all the operations we considered so far: symmetry. The link-function formulation depends explicitly on the order of the coordinates.</p>
+
+        <p>In fact, an example of an operation covered by this more general, non-symmetric version is the Exponential Moving Average (EMA), which discounts earlier coordinates more heavily. EMA is realised via the following link function:</p>
+
+        $$
+        \varphi_2(a, b) := (1 - \theta) \cdot a + \theta \cdot b, \qquad \theta \in (0, 1).
+        $$
+
+        <p>The classical mean is a version of this with $\theta$ changing dynamically with the dimension: $\theta_n = \dfrac{1}{n+1}$.</p>
+
+        <p>We should mention, however, that not all operations we think of as dimensionless have the above structure. For example, <code>std()</code>, or even its unscaled version <code>.var()</code>, cannot be obtained by the above recurrence. Indeed, we have the following property</p>
+
+        $$\varphi_2(x_1, x_2) = l(\varphi_1(x_1), x_2)$$
+
+        <p>In the case of <code>.var()</code>, we have $\varphi_1 \equiv 0$, but $\varphi_2(x_1, x_2)$ in general depends on $x_1$, so we cannot get the identity</p>
+
+        $$
+        \varphi_2(x_1, x_2) = l(\varphi_1(x_1), x_2) = l(0, x_2).
+        $$
+
+        <p>Nevertheless, <code>.var()</code> and <code>.std()</code> can be defined through a combination of such mappings:</p>
+
+        $$
+        \operatorname{Var}(x) = \operatorname{Mean}(x^2) - \operatorname{Mean}(x)^2
+        $$
+
+        <p>This is because for any set of dimensionless operations $\varphi_1, \ldots, \varphi_k$ and any functions $f_i \colon \R \to \R$ (for $i = 1, \ldots, k$) and $F \colon \R^k \to \R$, the combined operation</p>
+
+        $$
+        \varphi(x) := F\big(\varphi_1(f_1(x)), \ldots, \varphi_k(f_k(x))\big), \quad x \in \bigcup_{n \ge 1} \R^n,
+        $$
+
+        <p>is also dimensionless.</p>
+
+        <h2>Kolmogorov&ndash;Arnold representation theorem</h2>
+
+        <p>To cover a larger class of dimensionless functions, it's worth recalling the Kolmogorov&ndash;Arnold representation theorem, which states that if $\varphi$ is a multivariate continuous function, then it can be written as a finite composition of continuous single-variable functions and the binary operation of addition:</p>
+
+        $$
+          \varphi_n(x_1, \ldots, x_n) = \sum_{q=1}^{2n}\Psi_{q}\Big(\sum_{p=1}^n\psi_{q,p}(x_p)\Big)
+        $$
+
+        <p>where $\psi_{q,p}\colon \R\to \R$, $\Psi_{q}\colon \R \to \R$. The above representation depends on the dimension $n$ through the number of building functions; to remove that dependency, we should fix the number of different functions. We can do this by first assuming we have a fixed number of outer functions $\Psi_{1}, \ldots, \Psi_{k}$, and assuming further that the inner functions don't depend on $p$; this yields a dimensionless function of the following form:</p>
+
+        $$
+          \varphi_n(x_1, \ldots, x_n) = \Psi_{1}\Big(\sum_{p=1}^n\psi_{1}(x_p)\Big)\,+\, \Psi_{2}\Big(\sum_{p=1}^n\psi_{2}(x_p)\Big)\,+\ldots+\,\Psi_{k}\Big(\sum_{p=1}^n\psi_{k}(x_p)\Big)
+        $$
+
+        <p>Notice that for $k=2$ using $\Psi_1(x)=x$, $\Psi_2(x) = -x^2$, $\psi_1(x)=x^2$, $\psi_2(x)=x$ and introducing some dimensional constant multips we could construct <code>.var()</code> operation.
+        <p>We can see that the operations of the above form are symmetric in $n$. Moreover, the above structure is basically the extension of the <code>sum</code> operator by a fixed number of non-linearities &mdash; it's basically a two-layer network which only uses <code>sum</code> as its linear-layer operation, together with a given set of nonlinearities as activation functions.</p>
+
+        <p>Schmidt-Hieber [2020] has actually extended the above representation result to a form which requires fewer parameters and is perhaps more relevant for neural networks and our problem. They prove that for fixed integers $d, B \ge 2$, there exists a monotone function $\psi \colon [0, 1] \to \R$ such that for any function $f \colon [0, 1]^d \to \R$, one can find an outer function $g \colon \R \to \R$</p>
+
+        $$
+        f(x_1, \ldots, x_n) = g\Big(\sum_{p=1}^nB^{-p}\psi(x_p)\Big)
+        $$
+
+        <p>Here, by definition, $\psi$ and $B$ depend on the dimension $d$, while $g$ depends on the specific function $f$; however, if we fix $B, \psi, g$, the above basically defines a dimensionless operator. In particular, the result means that any function of $d$ variables has a "natural" (in terms of the above representation) extension to all dimensions.</p>
+
+        <p>Note that, similarly to the previous version which extended the <code>sum</code> operator, this version adapts the <code>ema</code> with integer discount factor $B$. Hence, <code>ema</code> can be thought of as the "prime/generative" representative of all dimensionless operators (similarly, <code>sum</code> can be thought of as the prime representative of all symmetric dimensionless operators).</p>
+
+        <p>One of the caveats of these representations is that in general the functions $g, \psi$ may have very complicated structure even for very nice functions $f$, and hence not be useful for practical use. Nevertheless, the representation above allows one to generate many dimensionless functions.</p>
+
+        <h2>Symmetric dimensionless operations</h2>
+
+        <p>In the previous section, we already mentioned one clear property that unifies most of the examples we considered: they're all symmetric. By symmetry of an operation, we mean that permuting the coordinates of the input vector doesn't change the result:</p>
+
+        $$
+        \begin{aligned}
+        F(x_1, \ldots, x_n) = F(x_{\sigma(1)}, \ldots, x_{\sigma(n)})
+        \end{aligned}
+        $$
+
+        <p>for every permutation $\sigma$ of $\{1, \ldots, n\}$. This holds for all the operations we discussed so far:</p>
+
+        $$
+        F \,=\quad  \operatorname{Sum},\quad \operatorname{Mean},\quad \operatorname{Max},\quad \operatorname{Min},\quad \operatorname{Median},\quad \ldots
+        $$
+
+        <p>The symmetry means that these operations aren't really functions of vectors, but of the collection of their coordinates &mdash; in other words, the point cloud &mdash; which is mathematically represented by a sum of Dirac measures:</p>
+
+        $$
+        \nu_x = \sum_{i=1}^n \delta_{x_i}.
+        $$
+
+        <p>As we already mentioned, this approach doesn't apply directly to a non-symmetric operation like EMA. However, that case can be covered too, if we allow a non-uniform measure that doesn't give equal weight to every coordinate:</p>
+
+        $$
+        \nu_{x,\theta} = (1-\theta)^{n-1}\delta_{x_1} + (1-\theta)^{n-2}\theta\,\delta_{x_2} + \ldots + \theta\,\delta_{x_n}.
+        $$
+
+        <p>Permutation invariance says $\varphi_n$ can't distinguish $x$ from any reordering of $x$; it only ever depends on <em>which values occur and how many times</em>, which is exactly the information $\nu_x$ carries and reordering doesn't change. Dimension-coherence says the rule itself doesn't mention $n$. Put those together and the operation has to factor as</p>
+
+        $$\varphi_n(x) = F(\nu_x)$$
+
+        <p>for a single functional $F$, defined once, that never sees $n$ as an input; $n$ only shows up indirectly, as the total mass of $\nu_x$.</p>
+
+        <p><img src="images/diracs.png" alt="Seven points on a number line, each marked with a tapering Dirac-delta spike; the labels x_6, x_1, x_4, x_2, x_5, x_3, x_7 show the spikes don't depend on the order the points are listed in." /></p>
+        <p><em>The point cloud $x_1, \ldots, x_7$ as a sum of Dirac masses, $\nu_x = \sum_i \delta_{x_i}$: one spike per value, however the $x_i$ happen to be labeled or ordered.</em></p>
+
+      </article>
+    </main>
+    <footer class="site-footer">
+      <div class="page">&copy; 2026 Vardan Voskanyan</div>
+    </footer>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+    <script>
+      window.addEventListener('load', function () {
+        if (window.renderMathInElement) {
+          renderMathInElement(document.body, {
+            delimiters: [
+              { left: '$$', right: '$$', display: true },
+              { left: '$', right: '$', display: false }
+            ],
+            macros: { '\\R': '\\mathbb{R}', '\\N': '\\mathbb{N}' }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
