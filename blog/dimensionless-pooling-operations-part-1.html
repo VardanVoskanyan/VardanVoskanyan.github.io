@@ -42,6 +42,8 @@
 
         <p>These naturally generalise to any dimension.</p>
 
+        <p>Softmax is a slightly different example: it maps $\R^n$ to $\R^n$ rather than reducing its input to a scalar, but it shares the same property of having a natural definition for every input dimension.</p>
+
         <p>It's worth mentioning that some of these operations, like mean, median, and std, actually depend on the dimension through normalisation; we still consider them dimensionless, though, since there's a natural way to define them consistently for any dimension.</p>
 
         <p>Pooling layers in Convolutional Neural Networks are a typical example of operations with this property.</p>
@@ -71,10 +73,14 @@
         <p>One natural way to get this is to have a way to embed the lower-dimensional sets into the higher-dimensional ones. Consider a collection of mappings, which we'll call an <strong>R-system</strong>,</p>
 
         $$
-        \mathcal{R} = \big\{\, r_{k,n} \colon \R^k \to \R^n \;\big|\; k, n \ge 1 \,\big\},
+        \mathcal{R} = \big\{\, r_{k,n} \colon \R^k \to \R^n \;\big|\; 1 \le k \le n \,\big\},
         $$
 
-        <p>with the property that the following diagram always commutes:</p>
+        <p>with $r_{n,n}=\operatorname{id}_{\R^n}$ and the property that the following diagram always commutes whenever $k \le m \le n$:</p>
+
+        $$
+        r_{m,n}\circ r_{k,m}=r_{k,n}.
+        $$
 
         <p><img class="figure-compact" src="images/r-system.png" alt="Commutative triangle: R^k, R^m, and R^n connected by embeddings r_km, r_mn, and r_kn, with r_mn composed with r_km equal to r_kn." /></p>
         <p><em>The R-system's own consistency: embedding $\R^k$ into $\R^n$ directly ($r_{k,n}$) agrees with going via any intermediate dimension $\R^m$ ($r_{m,n} \circ r_{k,m}$).</em></p>
@@ -88,10 +94,10 @@
 
         $$
         \begin{aligned}
-        \operatorname{max}\colon &\ r_{k,n}(x_1,\ldots,x_k) = (x_1,\ldots,x_k, m, \ldots, m) \in \R^n, \quad m = \operatorname{max}(x_1,\ldots,x_k),\\
-        \operatorname{min}\colon &\ r_{k,n}(x_1,\ldots,x_k) = (x_1,\ldots,x_k, m, \ldots, m) \in \R^n, \quad m = \operatorname{min}(x_1,\ldots,x_k),\\
-        \operatorname{mean}\colon &\ r_{k,n}(x_1,\ldots,x_k) = (x_1,\ldots,x_k, m, \ldots, m) \in \R^n, \quad m = \operatorname{mean}(x_1,\ldots,x_k),\\
-        \operatorname{sum}\colon &\ r_{k,n}(x_1,\ldots,x_k) = (x_1,\ldots,x_k, 0, \ldots, 0) \in \R^n.
+        \operatorname{max}\colon &amp;\ r_{k,n}(x_1,\ldots,x_k) = (x_1,\ldots,x_k, m, \ldots, m) \in \R^n, \quad m = \operatorname{max}(x_1,\ldots,x_k),\\
+        \operatorname{min}\colon &amp;\ r_{k,n}(x_1,\ldots,x_k) = (x_1,\ldots,x_k, m, \ldots, m) \in \R^n, \quad m = \operatorname{min}(x_1,\ldots,x_k),\\
+        \operatorname{mean}\colon &amp;\ r_{k,n}(x_1,\ldots,x_k) = (x_1,\ldots,x_k, m, \ldots, m) \in \R^n, \quad m = \operatorname{mean}(x_1,\ldots,x_k),\\
+        \operatorname{sum}\colon &amp;\ r_{k,n}(x_1,\ldots,x_k) = (x_1,\ldots,x_k, 0, \ldots, 0) \in \R^n.
         \end{aligned}
         $$
 
@@ -103,9 +109,9 @@
 
         $$
         \begin{aligned}
-        &\operatorname{Sum}_{n+1}(x_1, \ldots, x_n, x_{\text{new}}) &\,=\quad &\operatorname{Sum}_n(x_1, \ldots, x_n) + x_{\text{new}} \\
-        &\operatorname{Prod}_{n+1}(x_1, \ldots, x_n, x_{\text{new}}) &\,=\quad &\operatorname{Prod}_n(x_1, \ldots, x_n) \cdot x_{\text{new}} \\
-        &\operatorname{Max}_{n+1}(x_1, \ldots, x_n, x_{\text{new}}) &\,=\quad &\operatorname{max}\big(\operatorname{Max}_n(x_1, \ldots, x_n),\, x_{\text{new}}\big)
+        &amp;\operatorname{Sum}_{n+1}(x_1, \ldots, x_n, x_{\text{new}}) &amp;\,=\quad &amp;\operatorname{Sum}_n(x_1, \ldots, x_n) + x_{\text{new}} \\
+        &amp;\operatorname{Prod}_{n+1}(x_1, \ldots, x_n, x_{\text{new}}) &amp;\,=\quad &amp;\operatorname{Prod}_n(x_1, \ldots, x_n) \cdot x_{\text{new}} \\
+        &amp;\operatorname{Max}_{n+1}(x_1, \ldots, x_n, x_{\text{new}}) &amp;\,=\quad &amp;\operatorname{max}\big(\operatorname{Max}_n(x_1, \ldots, x_n),\, x_{\text{new}}\big)
         \end{aligned}
         $$
 
@@ -145,7 +151,7 @@
         \varphi_{n+1}(x_1, \ldots, x_n, x_{\text{new}}) = l\big(\varphi_n(x_1, \ldots, x_n), x_{\text{new}}; n\big).
         $$
 
-        <p>One drawback of this formulation is that it misses a property shared by all the operations we considered so far: symmetry. The link-function formulation depends explicitly on the order of the coordinates.</p>
+        <p>One drawback of this formulation is that it does not by itself impose a property shared by all the operations we considered so far: symmetry. Depending on the link function, the resulting operation can depend on the order of the coordinates.</p>
 
         <p>In fact, an example of an operation covered by this more general, non-symmetric version is the Exponential Moving Average (EMA), which discounts earlier coordinates more heavily. EMA is realised via the following link function:</p>
 
@@ -155,7 +161,7 @@
 
         <p>The classical mean is a version of this with $\theta$ changing dynamically with the dimension: $\theta_n = \dfrac{1}{n+1}$.</p>
 
-        <p>We should mention, however, that not all operations we think of as dimensionless have the above structure. For example, <code>std()</code>, or even its unscaled version <code>.var()</code>, cannot be obtained by the above recurrence. Indeed, we have the following property</p>
+        <p>We should mention, however, that not all operations we think of as dimensionless have the above structure. For example, <code>.var()</code>, and hence <code>.std()</code>, cannot be obtained by the above scalar recurrence. Indeed, we have the following property</p>
 
         $$\varphi_2(x_1, x_2) = l(\varphi_1(x_1), x_2)$$
 
@@ -165,13 +171,21 @@
         \varphi_2(x_1, x_2) = l(\varphi_1(x_1), x_2) = l(0, x_2).
         $$
 
-        <p>Nevertheless, <code>.var()</code> and <code>.std()</code> can be defined through a combination of such mappings:</p>
+        <p>Nevertheless, population variance and standard deviation can be defined through a combination of such mappings:</p>
 
         $$
-        \operatorname{Var}(x) = \operatorname{Mean}(x^2) - \operatorname{Mean}(x)^2
+        \operatorname{Var}(x) = \operatorname{Mean}(x^2) - \operatorname{Mean}(x)^2.
         $$
 
-        <p>This is because for any set of dimensionless operations $\varphi_1, \ldots, \varphi_k$ and any functions $f_i \colon \R \to \R$ (for $i = 1, \ldots, k$) and $F \colon \R^k \to \R$, the combined operation</p>
+        <p>Equivalently, if $N(x)=\sum_i 1$, $S_1(x)=\sum_i x_i$, and $S_2(x)=\sum_i x_i^2$, then</p>
+
+        $$
+        \operatorname{Var}(x)=\frac{S_2(x)}{N(x)}-\left(\frac{S_1(x)}{N(x)}\right)^2.
+        $$
+
+        <p>Thus this construction uses the dimension through the dimensionless counting operation $N(x)$, in the same way that the mean uses the input size for normalisation.</p>
+
+        <p>This is because for any set of dimensionless operations $\varphi_1, \ldots, \varphi_k$, any functions $f_i \colon \R \to \R$ applied coordinatewise (for $i = 1, \ldots, k$), and any $F \colon \R^k \to \R$, the combined operation</p>
 
         $$
         \varphi(x) := F\big(\varphi_1(f_1(x)), \ldots, \varphi_k(f_k(x))\big), \quad x \in \bigcup_{n \ge 1} \R^n,
@@ -181,28 +195,28 @@
 
         <h2>Kolmogorov&ndash;Arnold representation theorem</h2>
 
-        <p>To cover a larger class of dimensionless functions, it's worth recalling the Kolmogorov&ndash;Arnold representation theorem, which states that if $\varphi$ is a multivariate continuous function, then it can be written as a finite composition of continuous single-variable functions and the binary operation of addition:</p>
+        <p>To cover a larger class of dimensionless functions, it's worth recalling the Kolmogorov&ndash;Arnold representation theorem. One standard form states that every continuous function $f\colon[0,1]^d\to\R$ can be written as a finite composition of continuous single-variable functions and the binary operation of addition:</p>
 
         $$
-          \varphi_n(x_1, \ldots, x_n) = \sum_{q=1}^{2n}\Psi_{q}\Big(\sum_{p=1}^n\psi_{q,p}(x_p)\Big)
+          f(x_1, \ldots, x_d) = \sum_{q=0}^{2d}\Psi_{q}\Big(\sum_{p=1}^d\psi_{q,p}(x_p)\Big).
         $$
 
-        <p>where $\psi_{q,p}\colon \R\to \R$, $\Psi_{q}\colon \R \to \R$. The above representation depends on the dimension $n$ through the number of building functions; to remove that dependency, we should fix the number of different functions. We can do this by first assuming we have a fixed number of outer functions $\Psi_{1}, \ldots, \Psi_{k}$, and assuming further that the inner functions don't depend on $p$; this yields a dimensionless function of the following form:</p>
+        <p>where $\psi_{q,p}$ and $\Psi_q$ are continuous univariate functions. The above representation depends on the dimension $d$ through the number of building functions. Inspired by this representation, we can obtain a dimensionless construction by fixing the number of different functions. Assume we have fixed outer functions $\Psi_{1}, \ldots, \Psi_{k}$ and that the inner functions do not depend on the coordinate index $p$; this yields a dimensionless function of the following form:</p>
 
         $$
           \varphi_n(x_1, \ldots, x_n) = \Psi_{1}\Big(\sum_{p=1}^n\psi_{1}(x_p)\Big)\,+\, \Psi_{2}\Big(\sum_{p=1}^n\psi_{2}(x_p)\Big)\,+\ldots+\,\Psi_{k}\Big(\sum_{p=1}^n\psi_{k}(x_p)\Big)
         $$
 
-        <p>Notice that for $k=2$ using $\Psi_1(x)=x$, $\Psi_2(x) = -x^2$, $\psi_1(x)=x^2$, $\psi_2(x)=x$ and introducing some dimensional constant multips we could construct <code>.var()</code> operation.
-        <p>We can see that the operations of the above form are symmetric in $n$. Moreover, the above structure is basically the extension of the <code>sum</code> operator by a fixed number of non-linearities &mdash; it's basically a two-layer network which only uses <code>sum</code> as its linear-layer operation, together with a given set of nonlinearities as activation functions.</p>
+        <p>By including the counting function $N(x)=\sum_i1$ alongside $S_1(x)=\sum_i x_i$ and $S_2(x)=\sum_i x_i^2$, and combining their outputs using the preceding closure construction $F(\varphi_1,\ldots,\varphi_k)$, we can construct the population-variance operation.</p>
+        <p>We can see that the operations of the above form are permutation invariant in their $n$ inputs. Moreover, the above structure is basically the extension of the <code>sum</code> operator by a fixed number of non-linearities &mdash; it's basically a two-layer network which only uses <code>sum</code> as its linear-layer operation, together with a given set of nonlinearities as activation functions.</p>
 
-        <p>Schmidt-Hieber [2020] has actually extended the above representation result to a form which requires fewer parameters and is perhaps more relevant for neural networks and our problem. They prove that for fixed integers $d, B \ge 2$, there exists a monotone function $\psi \colon [0, 1] \to \R$ such that for any function $f \colon [0, 1]^d \to \R$, one can find an outer function $g \colon \R \to \R$</p>
+        <p>Schmidt-Hieber [2021; preprint 2020] gives a form which requires fewer functions and is perhaps more relevant for neural networks and our problem. For fixed integers $d, B \ge 2$, there exists a monotone function $\psi \colon [0, 1] \to \R$ such that for any function $f \colon [0, 1]^d \to \R$, one can find an outer function $g \colon \R \to \R$ with</p>
 
         $$
-        f(x_1, \ldots, x_n) = g\Big(\sum_{p=1}^nB^{-p}\psi(x_p)\Big)
+        f(x_1, \ldots, x_d) = g\Big(\sum_{p=1}^dB^{-p}\psi(x_p)\Big).
         $$
 
-        <p>Here, by definition, $\psi$ and $B$ depend on the dimension $d$, while $g$ depends on the specific function $f$; however, if we fix $B, \psi, g$, the above basically defines a dimensionless operator. In particular, the result means that any function of $d$ variables has a "natural" (in terms of the above representation) extension to all dimensions.</p>
+        <p>Here, $\psi$ depends on the fixed choices of $d$ and $B$, while $g$ depends on the specific function $f$; however, if we fix $B, \psi, g$, the above basically defines a dimensionless operator. In particular, the result means that any function of $d$ variables has a "natural" (in terms of the above representation) extension to all dimensions.</p>
 
         <p>Note that, similarly to the previous version which extended the <code>sum</code> operator, this version adapts the <code>ema</code> with integer discount factor $B$. Hence, <code>ema</code> can be thought of as the "prime/generative" representative of all dimensionless operators (similarly, <code>sum</code> can be thought of as the prime representative of all symmetric dimensionless operators).</p>
 
@@ -244,6 +258,13 @@
 
         <p><img src="images/diracs.png" alt="Seven points on a number line, each marked with a tapering Dirac-delta spike; the labels x_6, x_1, x_4, x_2, x_5, x_3, x_7 show the spikes don't depend on the order the points are listed in." /></p>
         <p><em>The point cloud $x_1, \ldots, x_7$ as a sum of Dirac masses, $\nu_x = \sum_i \delta_{x_i}$: one spike per value, however the $x_i$ happen to be labeled or ordered.</em></p>
+
+        <h2>References</h2>
+
+        <ul>
+          <li>A. N. Kolmogorov, <a href="https://www.mathnet.ru/eng/dan22050">On the representation of continuous functions of many variables by superposition of continuous functions of one variable and addition</a>, 1957.</li>
+          <li>J. Schmidt-Hieber, <a href="https://doi.org/10.1016/j.neunet.2021.01.020">The Kolmogorov&ndash;Arnold representation theorem revisited</a>, <em>Neural Networks</em> 137, 2021.</li>
+        </ul>
 
       </article>
     </main>
