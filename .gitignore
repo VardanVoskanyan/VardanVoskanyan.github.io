@@ -3,3 +3,6 @@
 .*
 !/.gitignore
 !/.nojekyll
+
+# Ignore local-only override files by convention (e.g. *.local.*).
+*.local.*
