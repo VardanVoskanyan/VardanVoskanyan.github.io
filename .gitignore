@@ -1,0 +1,5 @@
+# Ignore all dotfiles/dot-directories by default (e.g. local, unpublished
+# working folders), except the ones this repo actually needs tracked.
+.*
+!/.gitignore
+!/.nojekyll
