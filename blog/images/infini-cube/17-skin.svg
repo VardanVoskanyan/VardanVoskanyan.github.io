@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="312" viewBox="0 0 840 312">
+<rect x="0.5" y="0.5" width="839" height="311" rx="10" fill="#f6f7f9" stroke="#e3e6ea"/>
+<defs>
+<g id="f91"><rect width="100" height="100" fill="#f7f5ef"/><path d="M0 0h40v10h-40zM0 40h40v60h-40z" fill="#2ba36c" stroke="#2ba36c" stroke-width="0.4" vector-effect="non-scaling-stroke"/><path d="M0 10h40v30h-40z" fill="#d9423f" stroke="#d9423f" stroke-width="0.4" vector-effect="non-scaling-stroke"/></g>
+<g id="f92"><rect width="100" height="100" fill="#f58f29"/><path d="M0 10h100v30h-100z" fill="#2ba36c" stroke="#2ba36c" stroke-width="0.4" vector-effect="non-scaling-stroke"/></g>
+<g id="f93"><rect width="100" height="100" fill="#2ba36c"/><path d="M0 10h0v30h0zM40 10h60v30h-60z" fill="#d9423f" stroke="#d9423f" stroke-width="0.4" vector-effect="non-scaling-stroke"/><path d="M0 0h40v100h-40z" fill="#f7cb3d" stroke="#f7cb3d" stroke-width="0.4" vector-effect="non-scaling-stroke"/></g>
+<g id="f94"><rect width="100" height="100" fill="#d9423f"/><path d="M0 10h100v30h-100z" fill="#2c6fdb" stroke="#2c6fdb" stroke-width="0.4" vector-effect="non-scaling-stroke"/></g>
+<g id="f95"><rect width="100" height="100" fill="#2c6fdb"/><path d="M60 0h40v100h-40z" fill="#f7f5ef" stroke="#f7f5ef" stroke-width="0.4" vector-effect="non-scaling-stroke"/><path d="M0 10h60v30h-60zM100 10h0v30h0z" fill="#f58f29" stroke="#f58f29" stroke-width="0.4" vector-effect="non-scaling-stroke"/></g>
+<g id="f96"><rect width="100" height="100" fill="#f7cb3d"/><path d="M0 60h40v30h-40z" fill="#f58f29" stroke="#f58f29" stroke-width="0.4" vector-effect="non-scaling-stroke"/><path d="M0 0h40v60h-40zM0 90h40v10h-40z" fill="#2c6fdb" stroke="#2c6fdb" stroke-width="0.4" vector-effect="non-scaling-stroke"/></g>
+</defs>
+<g transform="translate(267 3)">
+<polygon points="82.62,211.58 82.62,55 198.5,103.44 198.5,260.02" fill="#a3a8b2"/>
+<polygon points="82.62,211.58 82.62,55 198.5,103.44 198.5,260.02" fill="#000000" fill-opacity="0.166"/>
+<polygon points="82.62,211.58 82.62,55 198.5,103.44 198.5,260.02" fill="none" stroke="#20232a" stroke-width="1.3" stroke-linejoin="round"/>
+<clipPath id="c97"><rect x="40" y="0" width="60" height="100"/></clipPath>
+<g transform="matrix(1.24387 -0.45125 1.15879 0.48439 32.87 73.05)"><g clip-path="url(#c97)"><use href="#f91"/></g></g>
+<polygon points="82.62,55 157.25,27.93 273.13,76.37 198.5,103.44" fill="#000000" fill-opacity="0.019"/>
+<polygon points="82.62,55 157.25,27.93 273.13,76.37 198.5,103.44" fill="none" stroke="#20232a" stroke-width="1.3" stroke-linejoin="round"/>
+<clipPath id="c98"><rect x="40" y="0" width="60" height="100"/></clipPath>
+<g transform="matrix(1.24387 -0.45125 0 1.5658 148.75 121.49)"><g clip-path="url(#c98)"><use href="#f93"/></g></g>
+<polygon points="198.5,260.02 273.13,232.95 273.13,76.37 198.5,103.44" fill="#000000" fill-opacity="0.123"/>
+<polygon points="198.5,260.02 273.13,232.95 273.13,76.37 198.5,103.44" fill="none" stroke="#20232a" stroke-width="1.3" stroke-linejoin="round"/>
+<polygon points="8.87,141.31 90.81,64.84 172.75,209.81 90.81,286.28" fill="#a3a8b2"/>
+<polygon points="8.87,141.31 90.81,64.84 172.75,209.81 90.81,286.28" fill="#000000" fill-opacity="0.166"/>
+<polygon points="8.87,141.31 90.81,64.84 172.75,209.81 90.81,286.28" fill="none" stroke="#20232a" stroke-width="1.3" stroke-linejoin="round"/>
+<clipPath id="c99"><rect x="0" y="0" width="40" height="100"/></clipPath>
+<g transform="matrix(1.24387 -0.45125 0.81939 1.4497 90.81 64.84)"><g clip-path="url(#c99)"><use href="#f91"/></g></g>
+<polygon points="90.81,64.84 140.56,46.79 222.5,191.76 172.75,209.81" fill="#000000" fill-opacity="0.047"/>
+<polygon points="90.81,64.84 140.56,46.79 222.5,191.76 172.75,209.81" fill="none" stroke="#20232a" stroke-width="1.3" stroke-linejoin="round"/>
+<clipPath id="c100"><rect x="0" y="0" width="40" height="100"/></clipPath>
+<g transform="matrix(1.24387 -0.45125 -0.81939 0.76468 172.74 209.81)"><g clip-path="url(#c100)"><use href="#f93"/></g></g>
+<polygon points="90.81,286.28 140.56,268.23 222.5,191.76 172.75,209.81" fill="#000000" fill-opacity="0.129"/>
+<polygon points="90.81,286.28 140.56,268.23 222.5,191.76 172.75,209.81" fill="none" stroke="#20232a" stroke-width="1.3" stroke-linejoin="round"/>
+<use href="#f92" transform="matrix(1.15879 0.48439 0 1.5658 32.87 73.05)"/>
+<polygon points="32.87,229.63 32.87,73.05 148.75,121.49 148.75,278.07" fill="#000000" fill-opacity="0.063"/>
+<polygon points="32.87,229.63 32.87,73.05 148.75,121.49 148.75,278.07" fill="none" stroke="#20232a" stroke-width="1.3" stroke-linejoin="round"/>
+<clipPath id="c101"><rect x="0" y="0" width="0" height="100"/></clipPath>
+<g transform="matrix(1.24387 -0.45125 1.15879 0.48439 32.87 73.05)"><g clip-path="url(#c101)"><use href="#f91"/></g></g>
+<polygon points="32.87,73.05 32.87,73.05 148.75,121.49 148.75,121.49" fill="#000000" fill-opacity="0.019"/>
+<polygon points="32.87,73.05 32.87,73.05 148.75,121.49 148.75,121.49" fill="none" stroke="#20232a" stroke-width="1.3" stroke-linejoin="round"/>
+<clipPath id="c102"><rect x="0" y="0" width="0" height="100"/></clipPath>
+<g transform="matrix(1.24387 -0.45125 0 1.5658 148.75 121.49)"><g clip-path="url(#c102)"><use href="#f93"/></g></g>
+<polygon points="148.75,278.07 148.75,278.07 148.75,121.49 148.75,121.49" fill="#000000" fill-opacity="0.123"/>
+<polygon points="148.75,278.07 148.75,278.07 148.75,121.49 148.75,121.49" fill="none" stroke="#20232a" stroke-width="1.3" stroke-linejoin="round"/>
+</g>
+<path d="M244 92L290 152" fill="none" stroke="#5b6169" stroke-width="1"/><circle cx="290" cy="152" r="2.6" fill="#20232a" stroke="#ffffff" stroke-width="1"/>
+<text x="236" y="96" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#1c1e21">the slab R[0.6,0.999999]</text>
+<text x="236" y="113" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6169">halfway through its turn</text>
+<path d="M244 232L350 236" fill="none" stroke="#5b6169" stroke-width="1"/><circle cx="350" cy="236" r="2.6" fill="#20232a" stroke="#ffffff" stroke-width="1"/>
+<text x="236" y="236" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#1c1e21">the skin of the L face</text>
+<text x="236" y="253" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6169">0.000001 thick, stays put</text>
+<path d="M602 146L520 190" fill="none" stroke="#5b6169" stroke-width="1"/><circle cx="520" cy="190" r="2.6" fill="#20232a" stroke="#ffffff" stroke-width="1"/>
+<text x="610" y="150" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#1c1e21">outside the slab</text>
+<text x="610" y="167" text-anchor="start" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#5b6169">stays put</text>
+</svg>

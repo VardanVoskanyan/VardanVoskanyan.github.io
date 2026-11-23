@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="300" viewBox="0 0 640 300" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="12">
+<rect x="0.5" y="0.5" width="640" height="300" fill="#f6f7f9" stroke="#e3e6ea" rx="10"/>
+<text x="56" y="20" font-size="13" font-weight="600" fill="#0b0b0b">Diversity at three scales, against steps × r</text>
+<line x1="56" x2="490" y1="256" y2="256" stroke="#e1e0d9"/>
+<text x="50" y="260" text-anchor="end" fill="#898781">0</text>
+<line x1="56" x2="490" y1="213.71428571428572" y2="213.71428571428572" stroke="#e1e0d9"/>
+<text x="50" y="217.71428571428572" text-anchor="end" fill="#898781">0.2</text>
+<line x1="56" x2="490" y1="171.42857142857144" y2="171.42857142857144" stroke="#e1e0d9"/>
+<text x="50" y="175.42857142857144" text-anchor="end" fill="#898781">0.4</text>
+<line x1="56" x2="490" y1="129.14285714285717" y2="129.14285714285717" stroke="#e1e0d9"/>
+<text x="50" y="133.14285714285717" text-anchor="end" fill="#898781">0.6</text>
+<line x1="56" x2="490" y1="86.85714285714286" y2="86.85714285714286" stroke="#e1e0d9"/>
+<text x="50" y="90.85714285714286" text-anchor="end" fill="#898781">0.8</text>
+<line x1="56" x2="490" y1="44.571428571428584" y2="44.571428571428584" stroke="#e1e0d9"/>
+<text x="50" y="48.571428571428584" text-anchor="end" fill="#898781">1</text>
+<text x="56" y="272" text-anchor="middle" fill="#898781">0.01</text>
+<text x="164.5" y="272" text-anchor="middle" fill="#898781">0.1</text>
+<text x="273" y="272" text-anchor="middle" fill="#898781">1</text>
+<text x="381.5" y="272" text-anchor="middle" fill="#898781">10</text>
+<text x="490" y="272" text-anchor="middle" fill="#898781">100</text>
+<line x1="56" x2="490" y1="256" y2="256" stroke="#c3c2b7"/>
+<text x="273" y="292" text-anchor="middle" fill="#52514e">steps × r (log)</text>
+<path d="M207.7,217.9L240.3,185.4L259.4,156.3L273.0,133.1L283.5,121.2L292.1,113.6L305.7,96.1L316.2,87.1L324.8,83.8L335.3,78.4L348.8,66.6L359.4,59.0L367.9,55.8L381.5,51.1L392.0,49.0L400.6,47.9L414.2,46.3L424.7,45.7L433.3,45.3L443.8,45.1L457.3,44.8L467.9,44.7L476.4,44.7" fill="none" stroke="#2a78d6" stroke-width="2" stroke-linejoin="round"/>
+<path d="M142.4,243.7L175.0,230.4L194.1,218.5L207.7,208.0L218.2,197.2L226.8,189.5L240.3,176.3L250.9,164.4L259.4,156.6L270.0,144.6L283.5,127.2L294.0,111.3L302.6,100.4L316.2,84.7L326.7,74.7L335.3,67.7L348.8,59.1L359.4,54.6L367.9,51.8L378.5,49.5L392.0,47.4L402.5,46.5L411.1,46.0" fill="none" stroke="#eb6834" stroke-width="2" stroke-linejoin="round"/>
+<path d="M77.0,252.5L109.7,248.7L128.8,245.1L142.4,241.4L152.9,237.9L161.5,234.5L175.0,228.7L185.5,223.2L194.1,218.3L204.6,210.4L218.2,199.9L228.7,188.8L237.3,179.2L250.9,161.6L261.4,147.9L270.0,136.1L283.5,117.4L294.0,103.7L302.6,93.0L313.1,81.8L326.7,69.7L337.2,62.9L345.8,58.7" fill="none" stroke="#1baf7a" stroke-width="2" stroke-linejoin="round"/>
+<line x1="496" x2="508" y1="44.6899102602224" y2="44.6899102602224" stroke="#2a78d6" stroke-width="2"/>
+<text x="512" y="48.6899102602224" fill="#52514e">r = 1/4</text>
+<line x1="496" x2="508" y1="58.6899102602224" y2="58.6899102602224" stroke="#eb6834" stroke-width="2"/>
+<text x="512" y="62.6899102602224" fill="#52514e">r = 1/16</text>
+<line x1="496" x2="508" y1="72.6899102602224" y2="72.6899102602224" stroke="#1baf7a" stroke-width="2"/>
+<text x="512" y="76.6899102602224" fill="#52514e">r = 1/64</text>
+</svg>

@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="A Rubik's cube where any slab of any thickness can turn: the puzzle, a law every point obeys, drawing pictures with commutators, and how a random scramble mixes." />
+    <title>The Infini-Cube: a Rubik's cube with a continuum of layers</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="page">
+        <a class="site-title" href="../">Vardan Voskanyan</a>
+        <nav class="site-nav">
+          <a href="../">Home</a>
+          <a href="../publications/">Publications</a>
+          <a href="./" aria-current="page">Blog</a>
+        </nav>
+      </div>
+    </header>
+    <main class="page">
+      <article>
+        <h1>The Infini-Cube: a Rubik's cube with a continuum of layers</h1>
+        <p class="entry-meta">November 22, 2026</p>
+
+        <div class="cube-demo" data-scramble="30" data-ms="260" data-autoplay data-map data-label="Thirty random moves on the Infini-Cube, then the same moves undone in reverse order."></div>
+        <p><em>Thirty random moves, then the same moves undone in reverse order. Each move
+        turns a slab whose thickness and position are random real numbers. Drag the
+        cube to look around; the small cube shows the three hidden faces. The map on
+        the right shows all six faces at once: each slab is a ring, and its points
+        slide along circles. It is explained below.</em></p>
+        <p>A 3×3×3 Rubik's cube has three layers you can turn about each axis. A 4×4×4
+        has four, and an n×n×n has n. The <strong>Infini-Cube</strong> takes the limit: about each
+        axis you may turn <strong>any slab</strong>, of any thickness, at any depth. The layers form
+        a continuum.</p>
+        <p>This post introduces the puzzle and its notation, explains how we simulate a
+        cube with uncountably many layers exactly, and then goes through what we have
+        found so far:</p>
+        <ul>
+        <li>a law that every point obeys;</li>
+        <li>a way to draw any picture on a face;</li>
+        <li>measurements of how a random scramble mixes the colours.</li>
+        </ul>
+        <p>The figures with buttons are live: drag a cube to turn it around, and press
+        Play or Step to run the moves.</p>
+        <h2>1. One cube, infinitely many layers</h2>
+        <p>Model the cube as the unit cube $[0,1]^3$, with the standard colours: white on
+        top (U), yellow on the bottom (D), green in front (F), blue at the back (B), red
+        on the right (R) and orange on the left (L). A <strong>move</strong> picks an axis and an
+        interval $[a,b]$ of depths along it, and turns every point of the cube in that
+        slab by a quarter turn.</p>
+        <p>This is always a legal move. Every cross-section perpendicular to an axis
+        is the unit square, so a slab of any thickness turns into itself, just like a
+        layer of a real cube.</p>
+        <p><img loading="lazy" alt="Solved; after U[0.2,0.55]; after two more moves" src="images/infini-cube/01-first-moves.svg" /></p>
+        <p><em>Left to right: the solved cube; after <code>U[0.2,0.55]</code>; after
+        <code>U[0.2,0.55] R[0.1,0.3]' F[0.4,0.9]2</code>. Under each cube is its net, the cube
+        unfolded into a cross: U on top, L F R B across the middle and D below.</em></p>
+        <p>There is a second way to flatten the cube. For the ordinary 3×3×3 cube, draw three families of three circles, one family for each axis. The stickers sit where circles of two different families cross, and a layer turn slides them along the circles of its own family. On the Infini-Cube each family becomes a continuous band of circles, each face becomes a curved square where two bands cross, and a slab turn rotates a ring.</p>
+        <p><img loading="lazy" alt="The circle map of the 3x3x3 cube and of the Infini-Cube, solved and after two moves" src="images/infini-cube/18-circle-map.svg" /></p>
+        <p><em>The circle map. Left: the 3×3×3 cube. Then the Infini-Cube: solved, after <code>U[0.2,0.55]</code> with the ring of that slab shaded, and after the commutator <code>[R[0.3,0.45], U[0.55,0.7]]</code>. The faces U, F, R are in the middle and L, B, D outside.</em></p>
+        <p>The live figures in this post use this map. When a slab turns, every point of it slides along its circle. A button on each figure switches to the unfolded cross.</p>
+        <p>A single move already shows the difference from a real cube. The band
+        <code>U[0.2,0.55]</code> sits at an arbitrary depth, and it cuts every side face along
+        lines that no finite cube has.</p>
+        <p>Here are the same three moves on the solid cube:</p>
+        <div class="cube-demo" data-alg="U[0.2,0.55] R[0.1,0.3]' F[0.4,0.9]2" data-map data-label="The three moves U[0.2,0.55], R[0.1,0.3]' and F[0.4,0.9]2 on a 3D cube."></div>
+        <p><em>Press Step to turn one slab at a time. The grey surfaces are the cuts inside
+        the cube, visible only while a slab turns.</em></p>
+        <h2>2. Speaking Infini-Cube</h2>
+        <p>The notation extends the standard cube notation.</p>
+        <p><strong>One letter per axis.</strong> On a real cube, R and L turn different layers. Here an
+        interval says which slab turns, so one face per axis is enough. We use <strong>R, U,
+        F</strong>, with depth measured <em>from that face</em>: 0 is the face itself and 1 is the
+        opposite face.</p>
+        <table>
+        <thead>
+        <tr>
+        <th>Notation</th>
+        <th>Meaning</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td><code>R[a,b]</code></td>
+        <td>turn the slab at depths $a$ to $b$ from R, a quarter turn clockwise as seen from R</td>
+        </tr>
+        <tr>
+        <td><code>R[s]</code></td>
+        <td><code>R[0,s]</code>: the outer layer of thickness $s$</td>
+        </tr>
+        <tr>
+        <td><code>R[a,b]'</code>, <code>R[a,b]2</code></td>
+        <td>counter-clockwise, half turn</td>
+        </tr>
+        <tr>
+        <td><code>x</code>, <code>y</code>, <code>z</code></td>
+        <td>the whole cube: <code>R[0,1]</code>, <code>U[0,1]</code>, <code>F[0,1]</code></td>
+        </tr>
+        <tr>
+        <td><code>(A)n</code>, <code>(A)'</code></td>
+        <td>repeat, invert</td>
+        </tr>
+        <tr>
+        <td><code>[A, B]</code>, <code>[A: B]</code></td>
+        <td>commutator $ABA'B'$, conjugate $ABA'$</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>L, D and B are accepted as shortcuts. They name the same slab seen from the
+        other side, so the direction flips: <code>L[a,b] = R[1-b,1-a]'</code>.</p>
+        <p><strong>Every n×n×n cube is inside.</strong> A move whose endpoints are multiples
+        of $1/n$ is an n×n×n cube move. So letters without an interval mean
+        "outer layer of the default depth $d$". With $d = 1/3$, every 3×3 algorithm
+        pastes in unchanged:</p>
+        <table>
+        <thead>
+        <tr>
+        <th>3×3</th>
+        <th>Infini-Cube</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>R, U, F</td>
+        <td><code>R[1/3]</code>, <code>U[1/3]</code>, <code>F[1/3]</code></td>
+        </tr>
+        <tr>
+        <td>L</td>
+        <td><code>R[2/3,1]'</code></td>
+        </tr>
+        <tr>
+        <td>M (follows L)</td>
+        <td><code>R[1/3,2/3]'</code></td>
+        </tr>
+        <tr>
+        <td>r (wide)</td>
+        <td><code>R[2/3]</code></td>
+        </tr>
+        </tbody>
+        </table>
+        <p>As a result, <strong>every algorithm becomes a one-parameter family.</strong>
+        Here is <code>R U R' U'</code> at depths 0.15, 1/3 and 0.45:</p>
+        <p><img loading="lazy" alt="R U R' U' at depths 0.15, 1/3, 0.45" src="images/infini-cube/02-depths.svg" /></p>
+        <p><em><code>R U R' U'</code> at depths 0.15, 1/3 and 0.45, as a solid and on the circle map.</em></p>
+        <p>Move the slider to change the depth yourself:</p>
+        <div class="cube-demo" data-alg="R U R' U'" data-depth="0.33" data-map data-label="The algorithm R U R' U' at an adjustable layer depth."></div>
+        <p><em><code>R U R' U'</code> with the outer layers at the depth you choose. At 1/3 it is the
+        3×3 move sequence.</em></p>
+        <p><strong>Identities.</strong></p>
+        <ul>
+        <li>Gluing: <code>U[a,b] U[b,c] = U[a,c]</code>.</li>
+        <li>Turns about the same axis commute.</li>
+        <li>Every move is generated by outer layers: <code>U[a,b] = U[b] U[a]'</code>.</li>
+        <li>A slab of zero width does nothing.</li>
+        </ul>
+        <h2>3. Simulating a continuum exactly</h2>
+        <p>A computer cannot store a continuum, but after finitely many moves it doesn't
+        need to. Each face is coloured in a finite pattern of axis-aligned rectangles.
+        So the model keeps a grid whose cut lines are <em>exactly the endpoints used so
+        far</em>, together with their mirror images $1-t$. The mirror images are needed
+        because a turn exchanges depths measured from opposite faces. Endpoints such
+        as 0.137 or 1/3 are stored as they are.</p>
+        <p>This means a move followed by its inverse returns <em>exactly</em> to where it
+        started. Cut lines that no longer separate anything are removed, so a solved
+        cube collapses back to a single cell per face. The pictures are drawn
+        from this model, so the grid is never visible.</p>
+        <p>A move permutes the cells of its slab in 4-cycles, in place. Its cost is
+        proportional to the slab's area: the model applies a 500-move random scramble
+        in about 1.5 seconds.</p>
+        <h2>4. The first law: every point has 24 places to be</h2>
+        <p>Everything below rests on one lemma.</p>
+        <blockquote>
+        <p><strong>Lemma.</strong> Every move acts on each point of the surface either trivially or
+        as one of the 24 rotations of the whole cube. Hence, after any sequence of
+        moves, the content of every point $p$ came from $h\,p$ for some rotation
+        $h$. A typical point can only ever visit <strong>24 positions</strong>, four on each face.</p>
+        </blockquote>
+        <p>A slab move either leaves a point alone or rotates it with the whole slab, and
+        products of rotations are rotations. That is the whole proof. Some
+        consequences:</p>
+        <ul>
+        <li><strong>The cube is a continuum of tiny puzzles.</strong> Each 24-position orbit is like
+          the "oblique centre" pieces of a big cube: 24 stickers, 4 of each colour. The
+          Infini-Cube is a continuum of these, coupled by the moves.</li>
+        <li><strong>The full state is a rotation per point.</strong> The simulator stores, for every
+          cell, which of the 24 rotations brought its content there. That is why
+          it can tell "<strong>Looks solved</strong>" (every face is one colour) from
+          "<strong>Solved</strong>" (every point is back home). A whole-cube rotation <code>y</code> looks
+          solved but isn't.</li>
+        <li><strong>Repetition always comes back.</strong> A fixed sequence $g$ permutes the 24 points
+          of every orbit. So $g^N$ is the identity, with
+          $N = \operatorname{lcm}(1, \dots, 24) = 5\,354\,228\,880$.</li>
+        <li><strong>Orbit balance.</strong> Every orbit always carries exactly 4 of each colour.</li>
+        </ul>
+        <h2>5. Small moves: commutators</h2>
+        <p>A single move changes a lot: a band around the whole cube. To make <em>small</em>
+        changes, cubers use commutators $[A,B] = A B A' B'$. Take two thin slabs, one
+        about the R axis and one about the U axis:</p>
+        <p><img loading="lazy" alt="The commutator [R[0.3,0.45], U[0.55,0.7]], move by move" src="images/infini-cube/03-commutator.svg" /></p>
+        <p><em><code>[R[0.3,0.45], U[0.55,0.7]]</code>, one move per panel. After four moves almost
+        everything is back, except the six small rectangles circled on the last map.</em></p>
+        <p>For slab widths $\varepsilon$ and $\delta$, the commutator changes area
+        <strong>exactly $6\varepsilon\delta$</strong>. It is two 3-cycles of $\varepsilon \times
+        \delta$ rectangles, one on each face, and it is the identity everywhere else.
+        With very thin slabs it is almost invisible:</p>
+        <p><img loading="lazy" alt="A thin commutator: six small squares" src="images/infini-cube/12-thin-commutator.svg" /></p>
+        <p><em><code>[R[0.3,0.36], U[0.6,0.66]]</code>: six squares of side 0.06, circled on the circle map.</em></p>
+        <p>In 3D you can see where the six rectangles come from. The two slabs cross in
+        two places, one on the front of the cube and one at the back:</p>
+        <div class="cube-demo" data-alg="[R[0.3,0.45], U[0.55,0.7]]" data-map data-label="The commutator of R[0.3,0.45] and U[0.55,0.7] on a 3D cube."></div>
+        <p><em><code>[R[0.3,0.45], U[0.55,0.7]]</code> in 3D. Three rectangles end up on the visible
+        corner and three on the hidden one.</em></p>
+        <p>So the group generated by the moves has elements with arbitrarily small
+        support. This is what makes drawing possible.</p>
+        <h2>6. Drawing on the cube</h2>
+        <p>The question that started this section: <strong>can we draw any picture on a face?</strong>
+        For example, take the blue face and draw a given curve on it in orange.</p>
+        <p><strong>Yes.</strong> Look at where the commutator's six rectangles land. With the R slab at
+        $I$ and the U slab at $J$, one of them is <em>exactly</em> the rectangle $I \times J$
+        on the blue face, in the blue face's own coordinates. Which colour arrives
+        there depends on the variant:</p>
+        <table>
+        <thead>
+        <tr>
+        <th>Commutator</th>
+        <th>paints $I \times J$ on the blue face</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td><code>[R[I], U[J]]</code></td>
+        <td>white</td>
+        </tr>
+        <tr>
+        <td><code>[R[I]', U[J]]</code></td>
+        <td>yellow</td>
+        </tr>
+        <tr>
+        <td><code>[U[J], R[I]]</code></td>
+        <td>orange</td>
+        </tr>
+        <tr>
+        <td><code>[U[J]', R[I]]</code></td>
+        <td>red</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>Commutators for different columns move completely disjoint rectangles, so they
+        don't interfere. A picture made of column runs therefore costs exactly
+        <strong>4 moves per run</strong>. Only the column width discretises it: the top and bottom
+        of each run are exact real numbers.</p>
+        <div class="cube-demo" data-alg="[U[0.5,0.62], R[0.3,0.4]] [U[0.42,0.56], R[0.4,0.5]] [U[0.36,0.48], R[0.5,0.6]]" data-ms="850" data-map data-speed data-yaw="2.52" data-label="Three columns of a drawing, one commutator each, played slowly."></div>
+        <p><em>Three columns, slowly. Every column is one commutator, that is four slab turns:
+        turn a U slab, turn an R slab, undo the first, undo the second. After each four
+        turns one more orange rectangle sits on the blue face, and one small rectangle
+        has changed on each of the other faces. Use Step to go one turn at a time.</em></p>
+        <p>A whole picture is the same thing repeated, column after column:</p>
+        <div class="cube-demo" data-draw="curve" data-columns="24" data-ms="380" data-map data-speed data-yaw="2.52" data-label="A random curve being drawn on the blue face of the cube, one commutator per column."></div>
+        <p><em>A random smooth curve drawn on the blue face in orange: 24 columns, 96 slab
+        turns, nothing else. The slider changes the speed, and Step plays one turn.
+        Watch the other faces. Replay draws a new curve.</em></p>
+        <p>The other five faces each receive a rotated or reflected copy of the drawing:
+        the <strong>shadows</strong>. They follow from the 24-position lemma: painting a point
+        of an orbit forces its orbit-mates to change too. In numbers, the total
+        changed area is always exactly $6\times$ the painted area.</p>
+        <p>Here is the finished cube, with the curve and its five shadows, each on its
+        own face:</p>
+        <p><img loading="lazy" alt="The finished drawing: the net, and the cube from the front and back corners" src="images/infini-cube/10-draw-curve.svg" /></p>
+        <p><em>The finished drawing. Left: the net. Right: the cube seen from the front corner
+        and from the back corner.</em></p>
+        <p>One detail is visible only in 3D. The drawing slabs stop $10^{-6}$ short of
+        the opposite face, because a slab that reaches the face turns that whole
+        face. So when a drawing move turns a slab that is almost the full depth, it
+        leaves behind a skin $10^{-6}$ thick:</p>
+        <p><img loading="lazy" alt="A drawing move halfway through, leaving a thin skin behind" src="images/infini-cube/17-skin.svg" /></p>
+        <p><em>Halfway through <code>R[0.6,0.999999]</code>. The orange skin of the L face stays put,
+        and the slab behind it turns.</em></p>
+        <p><img loading="lazy" alt="A disc in orange, and the area under a random curve in white" src="images/infini-cube/11-disc-area.svg" /></p>
+        <p><em>Left: a disc of radius 0.3 in orange (96 columns). Right: the region under a
+        random curve, in white. In both, the blue face is on the far right of the net,
+        and the small cube shows it from the back corner.</em></p>
+        <p><strong>Theorem (one-face drawing).</strong> Every union of column runs on one face can be
+        painted exactly with 4 moves per run, starting from the solved cube. Hence
+        every measurable set on a face can be drawn to any accuracy, in white, yellow,
+        orange or red. <em>(Green needs more care: the variants that paint green also
+        change a second rectangle on the blue face.)</em></p>
+        <p><strong>Can the shadows be avoided?</strong> Not entirely. By orbit balance, the orange that arrives on the blue face has to leave another face, and the blue it displaces has to go somewhere. So at least two faces change. Two is enough.</p>
+        <p>Take two parallel slabs, say <code>U[I]</code> and <code>U[J]</code> with $I$ and $J$ disjoint, and a thin outer layer <code>L[0,d]</code>. The commutator</p>
+        <p><code>[U[I]', L[0,d] U[J]' L[0,d]']</code></p>
+        <p>is a 3-cycle of just three rectangles. One is on the blue face and turns orange; its sides are given by $I$ and $J$. One is on the orange face and turns blue. The third receives the colour it already had, so nothing shows. This costs 8 moves per rectangle instead of 4, and the other four faces stay solved.</p>
+        <div class="cube-demo" data-draw="curve" data-two data-columns="16" data-ms="320" data-map data-speed data-yaw="2.52" data-label="A random curve being drawn on the blue face while only the orange face changes."></div>
+        <p><em>A curve drawn with these 3-cycles, 16 columns. Every step is again a slab turn, eight per rectangle. Only the blue and the orange face change: the orange face collects the displaced blue. Replay draws a new curve.</em></p>
+        <p><img loading="lazy" alt="A curve and a disc drawn on the blue face while only the orange face changes" src="images/infini-cube/19-two-face.svg" /></p>
+        <p><em>A curve (64 columns, 680 moves) and a disc (96 columns, 1760 moves), drawn with 3-cycles. The white, green, red and yellow faces are untouched.</em></p>
+        <p>Two restrictions come with it. The thin layer covers a frame of width $d$ around the face, so the picture has to stay inside that frame. And a run has to be cut where it crosses a diagonal of the face, because there the two slabs would overlap.</p>
+        <p>The sequences were found by a computer search. For each colour there are 32 variants, which differ in where the third rectangle lies. The program tries them in turn on a model cube and keeps the first one that leaves the earlier runs intact. For a curve and for a disc this always works. For a region that covers a large part of the face it does not yet: the region under the curve above still needs the six-face commutator for most of its runs.</p>
+        <!-- Hidden until the experiments and proofs are further along.
+        <p><strong>All six faces at once.</strong> If we prescribe every face, there is an obstruction:
+        orbit balance. Each 24-point orbit must keep 4 of each colour, and that
+        condition survives limits. We conjecture it is the <em>only</em> obstruction:</p>
+        <blockquote>
+        <p><strong>Drawing conjecture.</strong> A colouring of the surface can be approximated
+        arbitrarily well if and only if almost every 24-point orbit carries 4 of each
+        colour.</p>
+        </blockquote>
+        <p>We have a proof sketch, which reduces the question to the theory of big cubes.
+        The classical obstructions all live in regions that shrink away:</p>
+        <ul>
+        <li>corner twists and edge flips live on cubies near the edges;</li>
+        <li>the parity issues of big cubes are absorbed because each orbit has four
+          identical stickers of each colour.</li>
+        </ul>
+        <p><strong>How many moves does a drawing need?</strong> For a picture at resolution $1/n$:</p>
+        <ul>
+        <li>With endpoints on the $1/n$ grid, counting shows some pictures need
+          $\Omega(n^2 / \log n)$ moves.</li>
+        <li>The construction above uses $O(n^2)$.</li>
+        <li>Whether real-valued endpoints can do fundamentally better is open.</li>
+        </ul>
+        -->
+        <h2>7. A pattern gallery</h2>
+        <p>Classic cube patterns generalise to families. Every pattern below is a single
+        algorithm in the notation, with its sizes as parameters.</p>
+        <table class="gallery">
+        <tbody>
+        <tr>
+        <td style="text-align: center;"><img loading="lazy" alt="checkerboard" src="images/infini-cube/04-pattern-checkerboard.svg" /></td>
+        <td style="text-align: center;"><img loading="lazy" alt="concentric squares" src="images/infini-cube/04-pattern-bullseye.svg" /></td>
+        <td style="text-align: center;"><img loading="lazy" alt="cube in a cube" src="images/infini-cube/04-pattern-cubeincube.svg" /></td>
+        </tr>
+        <tr>
+        <td style="text-align: center;"><strong>7×7 checkerboard</strong>: every other band of 7, half-turned about all three axes</td>
+        <td style="text-align: center;"><strong>Concentric squares</strong>: the six-spot pattern <code>U D' R L' F B' U D'</code> at five depths</td>
+        <td style="text-align: center;"><strong>Cube in a cube</strong> at size 0.4: the 3×3 algorithm, outer layers of depth 0.4</td>
+        </tr>
+        <tr>
+        <td style="text-align: center;"><img loading="lazy" alt="nested frames" src="images/infini-cube/04-pattern-frames.svg" /></td>
+        <td style="text-align: center;"><img loading="lazy" alt="plaid" src="images/infini-cube/04-pattern-plaid.svg" /></td>
+        <td style="text-align: center;"><img loading="lazy" alt="six spots" src="images/infini-cube/04-pattern-spots.svg" /></td>
+        </tr>
+        <tr>
+        <td style="text-align: center;"><strong>Nested frames</strong>: the checker cross <code>M2 E2 S2</code> at four slab widths</td>
+        <td style="text-align: center;"><strong>Plaid</strong>: stripes about two axes</td>
+        <td style="text-align: center;"><strong>Six spots</strong> at depth 0.2</td>
+        </tr>
+        </tbody>
+        </table>
+        <p>The same patterns read better as solids:</p>
+        <p><img loading="lazy" alt="Cube in a cube, 7×7 checkerboard, concentric squares, and a 300-move scramble, in 3D" src="images/infini-cube/16-patterns-3d.svg" /></p>
+        <p><em>Top row: the front corner; bottom row: the back corner. Left to right: cube in
+        a cube, the 7×7 checkerboard, concentric squares, and 300 random moves for
+        contrast.</em></p>
+        <h2>8. How a random walk mixes the cube</h2>
+        <p>A <strong>random walk</strong> step turns a random slab about a random axis by 1, 2 or 3
+        quarter turns, with both endpoints uniform in $[0,1]$. How fast does the cube
+        become "random"?</p>
+        <p>The answer depends on the scale you look at, so we track several metrics.</p>
+        <ul>
+        <li><strong>Wrong-colour area</strong>: the share of the surface not showing its home colour.</li>
+        <li><strong>Mix-norm</strong>: a multiscale Sobolev-type norm from fluid-mixing research,
+          which is 1 when solved and tends to 0 as the cube mixes.</li>
+        <li><strong>Rotation mixing</strong>: how uniformly the 24 rotations are spread over the
+          surface.</li>
+        <li><strong>Local diversity</strong> $D_r$: the probability that two points within distance
+          $r$ have different colours.</li>
+        </ul>
+        <p>All are scaled so that 0 means solved and 1 means fully mixed.</p>
+        <p class="no-caption"><img loading="lazy" alt="Mixing metrics over 300 steps" src="images/infini-cube/07-mixing.svg" /></p>
+        <p>Wrong-colour area saturates within about 20 steps, and the mix-norm and
+        rotation mixing within about 100. Fine-scale diversity takes hundreds. The structure that remains shows up on the <strong>diversity map</strong>,
+        which shades each point by how mixed its neighbourhood is:</p>
+        <p><img loading="lazy" alt="Colours and diversity map after 60 steps" src="images/infini-cube/06-diversity.svg" /></p>
+        <p><em>After 60 steps. Left: the colours. Right: local diversity at radius 1/16,
+        stretched to the observed range 0.64 to 0.99. Light spots are patches that are
+        still unmixed.</em></p>
+        <p><strong>The length scales follow simple laws.</strong> Over 6 walks of 300 steps:</p>
+        <ul>
+        <li>The <strong>correlation length</strong> $\xi$, the typical size of a single-colour patch,
+          decays like <strong>$\xi \approx 1.7/n$</strong> after $n$ steps.</li>
+        <li>The <strong>interface length</strong>, the total length of boundaries between colours,
+          grows like <strong>$7n$</strong>. At $n = 300$ it is $6.99\,n$.</li>
+        </ul>
+        <p class="no-caption"><img loading="lazy" alt="Correlation length and interface length" src="images/infini-cube/08-scales.svg" /></p>
+        <p><strong>Mixing at scale $r$ takes about $1/r$ steps.</strong> The heuristic is this. With
+        uniform endpoints, cuts fall uniformly, so an interval of length $r$ survives
+        $n$ steps without a cut with probability roughly $e^{-c\,n r}$. Mixing at
+        scale $r$ should therefore depend only on $n \cdot r$. Plotting diversity at
+        three scales against steps × $r$ confirms it: the three curves collapse onto
+        one.</p>
+        <p class="no-caption"><img loading="lazy" alt="Diversity at r = 1/4, 1/16, 1/64 against steps × r" src="images/infini-cube/09-collapse.svg" /></p>
+        <p>Two smaller observations:</p>
+        <ul>
+        <li>Once mixed, about 1/5 of all colour boundaries separate <em>opposite</em> colours
+          (white and yellow, red and orange, green and blue). We measured 0.205. That is exactly
+          the share expected if all 15 colour pairs were equally likely.</li>
+        <li>The constants 1.7 and 7 are not yet explained. A naive count says each move
+          adds 8 units of potential boundary, of which 5/6 separate different colours
+          once mixed: that gives 6.7, not 7.</li>
+        </ul>
+        <!-- Hidden until the experiments and proofs are further along.
+        <h2>9. Can the Infini-Cube compute?</h2>
+        <p>Conway's Game of Life is a game, yet it is Turing complete. "Computing" is a
+        matter of how you read the system: there, one fixed rule is iterated, and
+        patterns are read as signals and gates. What are the natural readings for the
+        Infini-Cube?</p>
+        <ol>
+        <li><strong>Iterate one fixed sequence.</strong> This cannot compute. By the 24-position
+           lemma, every sequence has finite order dividing 5 354 228 880, so its orbit
+           is periodic. Here the cube differs fundamentally from the Game of Life.</li>
+        <li><strong>A finite controller</strong> reads colours at a few points and picks from finitely
+           many fixed moves. This is still a finite-state machine. Finitely many moves
+           use finitely many cut positions and generate a finite group.</li>
+        <li><strong>Moves at shrinking scales.</strong> Suppose the controller uses <em>templates</em> whose
+           endpoints are scaled by $2^{-k}$. Now the cube has room for unbounded
+           memory: tape cell $k$ lives in the band of depths $[2^{-k-1}, 2^{-k}]$, and
+           is written with the small commutators of §5. The difficulty is the head
+           position. It must be stored on the cube, not in an unbounded counter in the
+           controller, since a controller with an unbounded counter is already a
+           computer by itself.</li>
+        </ol>
+        <p>Whether such a machine can be universal is <strong>open</strong>. There is a hint
+           pointing each way. Piecewise-linear maps of the square can be universal
+           (Moore, 1990), but they stretch and shrink regions. Our moves are rigid,
+           which is exactly why reading (1) fails, so any universality must come from
+           the choice of scales.</p>
+        <h2>10. Open questions</h2>
+        <ol>
+        <li><strong>The drawing conjecture.</strong> Is orbit balance the only obstruction to
+           drawing on all six faces at once? There is a proof sketch via big-cube
+           theory.</li>
+        <li><strong>Drawing cost.</strong> With real endpoints, does drawing at resolution $1/n$
+           still need about $n^2$ moves, or can continuous cuts be exploited?</li>
+        <li><strong>Green.</strong> Paint the fifth colour on a face with one rectangle commutator.
+           Also: draw starting from any state, not only from the solved cube.</li>
+        <li><strong>Computation.</strong> Is there a finite controller with shrinking-scale move
+           templates, whose only memory is the cube, that is Turing complete?</li>
+        <li><strong>The constants.</strong> Why $\xi \approx 1.7/n$ and an interface length of
+           $\approx 7n$?</li>
+        <li><strong>Slow corners.</strong> A point at depth $t$ is turned by a random slab with
+           probability $2t(1-t)$. So regions near the cube's edges should mix more
+           slowly than the centres of faces. Do they, and by how much?</li>
+        <li><strong>Hidden invariants.</strong> Big cubes have parity constraints. Which invariants
+           constrain the full state (the rotation per point) of the Infini-Cube?</li>
+        </ol>
+        -->
+
+      </article>
+    </main>
+    <footer class="site-footer">
+      <div class="page">&copy; 2026 Vardan Voskanyan</div>
+    </footer>
+
+    <script src="infini-cube/cube.js"></script>
+    <script src="infini-cube/notation.js"></script>
+    <script src="infini-cube/walk.js"></script>
+    <script src="infini-cube/draw.js"></script>
+    <script src="infini-cube/view3d.js"></script>
+    <script src="infini-cube/embed.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+    <script>
+      window.addEventListener('load', function () {
+        if (window.renderMathInElement) {
+          renderMathInElement(document.body, {
+            delimiters: [
+              { left: '$$', right: '$$', display: true },
+              { left: '$', right: '$', display: false }
+            ],
+            ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

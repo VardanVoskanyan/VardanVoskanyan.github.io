@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="371.6" viewBox="0 0 840 371.6">
+<rect x="0.5" y="0.5" width="839" height="370.6" rx="10" fill="#f6f7f9" stroke="#e3e6ea"/>
+<defs>
+<g id="f1"><rect width="100" height="100" fill="#f7f5ef"/></g>
+<g id="f2"><rect width="100" height="100" fill="#f58f29"/></g>
+<g id="f3"><rect width="100" height="100" fill="#2ba36c"/></g>
+<g id="f4"><rect width="100" height="100" fill="#d9423f"/></g>
+<g id="f5"><rect width="100" height="100" fill="#2c6fdb"/></g>
+<g id="f6"><rect width="100" height="100" fill="#f7cb3d"/></g>
+<g id="f7"><rect width="100" height="100" fill="#f7f5ef"/></g>
+<g id="f8"><rect width="100" height="100" fill="#f58f29"/><path d="M0 20h100v35h-100z" fill="#2ba36c" stroke="#2ba36c" stroke-width="0.4" vector-effect="non-scaling-stroke"/></g>
+<g id="f9"><rect width="100" height="100" fill="#2ba36c"/><path d="M0 20h100v35h-100z" fill="#d9423f" stroke="#d9423f" stroke-width="0.4" vector-effect="non-scaling-stroke"/></g>
+<g id="f10"><rect width="100" height="100" fill="#d9423f"/><path d="M0 20h100v35h-100z" fill="#2c6fdb" stroke="#2c6fdb" stroke-width="0.4" vector-effect="non-scaling-stroke"/></g>
+<g id="f11"><rect width="100" height="100" fill="#2c6fdb"/><path d="M0 20h100v35h-100z" fill="#f58f29" stroke="#f58f29" stroke-width="0.4" vector-effect="non-scaling-stroke"/></g>
+<g id="f12"><rect width="100" height="100" fill="#f7cb3d"/></g>
+<g id="f13"><rect width="100" height="100" fill="#f7f5ef"/><path d="M70 60h20v20h-20z" fill="#f58f29" stroke="#f58f29" stroke-width="0.4" vector-effect="non-scaling-stroke"/><path d="M10 10h20v35h-20z" fill="#2ba36c" stroke="#2ba36c" stroke-width="0.4" vector-effect="non-scaling-stroke"/><path d="M10 45h20v15h-20z" fill="#d9423f" stroke="#d9423f" stroke-width="0.4" vector-effect="non-scaling-stroke"/><path d="M70 0h20v10h-20zM70 80h20v20h-20z" fill="#2c6fdb" stroke="#2c6fdb" stroke-width="0.4" vector-effect="non-scaling-stroke"/><path d="M0 10h10v50h-10zM30 10h70v50h-70z" fill="#f7cb3d" stroke="#f7cb3d" stroke-width="0.4" vector-effect="non-scaling-stroke"/></g>
+<g id="f14"><rect width="100" height="100" fill="#f58f29"/><path d="M0 20h10v35h-10zM60 20h40v35h-40z" fill="#2ba36c" stroke="#2ba36c" stroke-width="0.4" vector-effect="non-scaling-stroke"/><path d="M10 0h50v45h-50zM10 80h50v20h-50z" fill="#d9423f" stroke="#d9423f" stroke-width="0.4" vector-effect="non-scaling-stroke"/><path d="M10 45h50v35h-50z" fill="#2c6fdb" stroke="#2c6fdb" stroke-width="0.4" vector-effect="non-scaling-stroke"/></g>
+<g id="f15"><rect width="100" height="100" fill="#2ba36c"/><path d="M70 0h20v100h-20z" fill="#f7f5ef" stroke="#f7f5ef" stroke-width="0.4" vector-effect="non-scaling-stroke"/><path d="M0 20h70v35h-70zM90 20h10v35h-10z" fill="#d9423f" stroke="#d9423f" stroke-width="0.4" vector-effect="non-scaling-stroke"/></g>
+<g id="f16"><rect width="100" height="100" fill="#f58f29"/><path d="M40 45h50v35h-50z" fill="#2ba36c" stroke="#2ba36c" stroke-width="0.4" vector-effect="non-scaling-stroke"/><path d="M0 0h40v20h-40zM90 0h10v20h-10zM0 55h40v45h-40zM90 55h10v45h-10z" fill="#d9423f" stroke="#d9423f" stroke-width="0.4" vector-effect="non-scaling-stroke"/><path d="M0 20h40v35h-40zM90 20h10v35h-10z" fill="#2c6fdb" stroke="#2c6fdb" stroke-width="0.4" vector-effect="non-scaling-stroke"/></g>
+<g id="f17"><rect width="100" height="100" fill="#2c6fdb"/><path d="M0 20h10v35h-10zM30 20h70v35h-70z" fill="#f58f29" stroke="#f58f29" stroke-width="0.4" vector-effect="non-scaling-stroke"/><path d="M10 0h20v100h-20z" fill="#f7cb3d" stroke="#f7cb3d" stroke-width="0.4" vector-effect="non-scaling-stroke"/></g>
+<g id="f18"><rect width="100" height="100" fill="#f7f5ef"/><path d="M10 40h20v15h-20z" fill="#f58f29" stroke="#f58f29" stroke-width="0.4" vector-effect="non-scaling-stroke"/><path d="M70 0h20v20h-20zM70 90h20v10h-20z" fill="#2ba36c" stroke="#2ba36c" stroke-width="0.4" vector-effect="non-scaling-stroke"/><path d="M70 20h20v20h-20z" fill="#d9423f" stroke="#d9423f" stroke-width="0.4" vector-effect="non-scaling-stroke"/><path d="M10 55h20v35h-20z" fill="#2c6fdb" stroke="#2c6fdb" stroke-width="0.4" vector-effect="non-scaling-stroke"/><path d="M0 0h70v40h-70zM90 0h10v40h-10zM0 90h70v10h-70zM90 90h10v10h-10z" fill="#f7cb3d" stroke="#f7cb3d" stroke-width="0.4" vector-effect="non-scaling-stroke"/></g>
+</defs>
+<text x="140" y="27" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="400" fill="#1c1e21">solved</text>
+<g transform="translate(57.2 34)">
+<use href="#f4" transform="matrix(0.53455 -0.35898 0 0.80738 93.51 73.19)"/>
+<polygon points="146.97,118.03 146.97,37.3 93.51,73.19 93.51,153.93" fill="#000000" fill-opacity="0.129"/>
+<polygon points="146.97,118.03 146.97,37.3 93.51,73.19 93.51,153.93" fill="none" stroke="#20232a" stroke-width="1.3" stroke-linejoin="round"/>
+<use href="#f1" transform="matrix(0.74877 0.25628 -0.53455 0.35898 72.09 11.67)"/>
+<polygon points="72.09,11.67 146.97,37.3 93.51,73.19 18.63,47.57" fill="#000000" fill-opacity="0.014"/>
+<polygon points="72.09,11.67 146.97,37.3 93.51,73.19 18.63,47.57" fill="none" stroke="#20232a" stroke-width="1.3" stroke-linejoin="round"/>
+<use href="#f3" transform="matrix(0.74877 0.25628 0 0.80738 18.63 47.57)"/>
+<polygon points="18.63,128.3 93.51,153.93 93.51,73.19 18.63,47.57" fill="#000000" fill-opacity="0.072"/>
+<polygon points="18.63,128.3 93.51,153.93 93.51,73.19 18.63,47.57" fill="none" stroke="#20232a" stroke-width="1.3" stroke-linejoin="round"/>
+</g>
+<g transform="translate(42 203.6)">
+<use href="#f1" transform="translate(50 0) scale(0.46)"/>
+<rect x="50" y="0" width="46" height="46" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<text x="73" y="23" dy="0.36em" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.8" font-weight="600" fill="#20232a" fill-opacity="0.8">U</text>
+<use href="#f2" transform="translate(0 50) scale(0.46)"/>
+<rect x="0" y="50" width="46" height="46" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<text x="23" y="73" dy="0.36em" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.8" font-weight="600" fill="#20232a" fill-opacity="0.8">L</text>
+<use href="#f3" transform="translate(50 50) scale(0.46)"/>
+<rect x="50" y="50" width="46" height="46" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<text x="73" y="73" dy="0.36em" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.8" font-weight="600" fill="#ffffff" fill-opacity="0.8">F</text>
+<use href="#f4" transform="translate(100 50) scale(0.46)"/>
+<rect x="100" y="50" width="46" height="46" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<text x="123" y="73" dy="0.36em" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.8" font-weight="600" fill="#ffffff" fill-opacity="0.8">R</text>
+<use href="#f5" transform="translate(150 50) scale(0.46)"/>
+<rect x="150" y="50" width="46" height="46" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<text x="173" y="73" dy="0.36em" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.8" font-weight="600" fill="#ffffff" fill-opacity="0.8">B</text>
+<use href="#f6" transform="translate(50 100) scale(0.46)"/>
+<rect x="50" y="100" width="46" height="46" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<text x="73" y="123" dy="0.36em" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13.8" font-weight="600" fill="#20232a" fill-opacity="0.8">D</text>
+</g>
+<text x="420" y="27" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="400" fill="#1c1e21">U[0.2,0.55]</text>
+<g transform="translate(337.2 34)">
+<use href="#f10" transform="matrix(0.53455 -0.35898 0 0.80738 93.51 73.19)"/>
+<polygon points="146.97,118.03 146.97,37.3 93.51,73.19 93.51,153.93" fill="#000000" fill-opacity="0.129"/>
+<polygon points="146.97,118.03 146.97,37.3 93.51,73.19 93.51,153.93" fill="none" stroke="#20232a" stroke-width="1.3" stroke-linejoin="round"/>
+<use href="#f7" transform="matrix(0.74877 0.25628 -0.53455 0.35898 72.09 11.67)"/>
+<polygon points="72.09,11.67 146.97,37.3 93.51,73.19 18.63,47.57" fill="#000000" fill-opacity="0.014"/>
+<polygon points="72.09,11.67 146.97,37.3 93.51,73.19 18.63,47.57" fill="none" stroke="#20232a" stroke-width="1.3" stroke-linejoin="round"/>
+<use href="#f9" transform="matrix(0.74877 0.25628 0 0.80738 18.63 47.57)"/>
+<polygon points="18.63,128.3 93.51,153.93 93.51,73.19 18.63,47.57" fill="#000000" fill-opacity="0.072"/>
+<polygon points="18.63,128.3 93.51,153.93 93.51,73.19 18.63,47.57" fill="none" stroke="#20232a" stroke-width="1.3" stroke-linejoin="round"/>
+</g>
+<g transform="translate(322 203.6)">
+<use href="#f7" transform="translate(50 0) scale(0.46)"/>
+<rect x="50" y="0" width="46" height="46" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<use href="#f8" transform="translate(0 50) scale(0.46)"/>
+<rect x="0" y="50" width="46" height="46" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<use href="#f9" transform="translate(50 50) scale(0.46)"/>
+<rect x="50" y="50" width="46" height="46" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<use href="#f10" transform="translate(100 50) scale(0.46)"/>
+<rect x="100" y="50" width="46" height="46" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<use href="#f11" transform="translate(150 50) scale(0.46)"/>
+<rect x="150" y="50" width="46" height="46" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<use href="#f12" transform="translate(50 100) scale(0.46)"/>
+<rect x="50" y="100" width="46" height="46" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+</g>
+<text x="700" y="27" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" font-weight="400" fill="#1c1e21">then R[0.1,0.3]' F[0.4,0.9]2</text>
+<g transform="translate(617.2 34)">
+<use href="#f16" transform="matrix(0.53455 -0.35898 0 0.80738 93.51 73.19)"/>
+<polygon points="146.97,118.03 146.97,37.3 93.51,73.19 93.51,153.93" fill="#000000" fill-opacity="0.129"/>
+<polygon points="146.97,118.03 146.97,37.3 93.51,73.19 93.51,153.93" fill="none" stroke="#20232a" stroke-width="1.3" stroke-linejoin="round"/>
+<use href="#f13" transform="matrix(0.74877 0.25628 -0.53455 0.35898 72.09 11.67)"/>
+<polygon points="72.09,11.67 146.97,37.3 93.51,73.19 18.63,47.57" fill="#000000" fill-opacity="0.014"/>
+<polygon points="72.09,11.67 146.97,37.3 93.51,73.19 18.63,47.57" fill="none" stroke="#20232a" stroke-width="1.3" stroke-linejoin="round"/>
+<use href="#f15" transform="matrix(0.74877 0.25628 0 0.80738 18.63 47.57)"/>
+<polygon points="18.63,128.3 93.51,153.93 93.51,73.19 18.63,47.57" fill="#000000" fill-opacity="0.072"/>
+<polygon points="18.63,128.3 93.51,153.93 93.51,73.19 18.63,47.57" fill="none" stroke="#20232a" stroke-width="1.3" stroke-linejoin="round"/>
+</g>
+<g transform="translate(602 203.6)">
+<use href="#f13" transform="translate(50 0) scale(0.46)"/>
+<rect x="50" y="0" width="46" height="46" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<use href="#f14" transform="translate(0 50) scale(0.46)"/>
+<rect x="0" y="50" width="46" height="46" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<use href="#f15" transform="translate(50 50) scale(0.46)"/>
+<rect x="50" y="50" width="46" height="46" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<use href="#f16" transform="translate(100 50) scale(0.46)"/>
+<rect x="100" y="50" width="46" height="46" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<use href="#f17" transform="translate(150 50) scale(0.46)"/>
+<rect x="150" y="50" width="46" height="46" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<use href="#f18" transform="translate(50 100) scale(0.46)"/>
+<rect x="50" y="100" width="46" height="46" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+</g>
+</svg>

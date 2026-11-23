@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="300" viewBox="0 0 640 300" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="12">
+<rect x="0.5" y="0.5" width="640" height="300" fill="#f6f7f9" stroke="#e3e6ea" rx="10"/>
+<text x="56" y="20" font-size="13" font-weight="600" fill="#0b0b0b">Length scales: correlation length ξ and interface length</text>
+<line x1="56" x2="490" y1="256" y2="256" stroke="#e1e0d9"/>
+<text x="50" y="260" text-anchor="end" fill="#898781">1e-3</text>
+<line x1="56" x2="490" y1="224.2857142857143" y2="224.2857142857143" stroke="#e1e0d9"/>
+<text x="50" y="228.2857142857143" text-anchor="end" fill="#898781">0.01</text>
+<line x1="56" x2="490" y1="192.57142857142858" y2="192.57142857142858" stroke="#e1e0d9"/>
+<text x="50" y="196.57142857142858" text-anchor="end" fill="#898781">0.1</text>
+<line x1="56" x2="490" y1="160.85714285714283" y2="160.85714285714283" stroke="#e1e0d9"/>
+<text x="50" y="164.85714285714283" text-anchor="end" fill="#898781">1</text>
+<line x1="56" x2="490" y1="129.14285714285717" y2="129.14285714285717" stroke="#e1e0d9"/>
+<text x="50" y="133.14285714285717" text-anchor="end" fill="#898781">10</text>
+<line x1="56" x2="490" y1="97.42857142857142" y2="97.42857142857142" stroke="#e1e0d9"/>
+<text x="50" y="101.42857142857142" text-anchor="end" fill="#898781">100</text>
+<line x1="56" x2="490" y1="65.71428571428572" y2="65.71428571428572" stroke="#e1e0d9"/>
+<text x="50" y="69.71428571428572" text-anchor="end" fill="#898781">1000</text>
+<line x1="56" x2="490" y1="34" y2="34" stroke="#e1e0d9"/>
+<text x="50" y="38" text-anchor="end" fill="#898781">10000</text>
+<text x="56" y="272" text-anchor="middle" fill="#898781">1</text>
+<text x="200.66666666666666" y="272" text-anchor="middle" fill="#898781">10</text>
+<text x="345.3333333333333" y="272" text-anchor="middle" fill="#898781">100</text>
+<text x="490" y="272" text-anchor="middle" fill="#898781">1000</text>
+<line x1="56" x2="490" y1="256" y2="256" stroke="#c3c2b7"/>
+<text x="273" y="292" text-anchor="middle" fill="#52514e">steps n (log)</text>
+<path d="M56.0,178.8L99.5,181.0L125.0,181.6L143.1,183.0L157.1,184.2L168.6,184.6L186.6,186.8L200.7,189.0L212.1,190.2L226.1,191.5L244.2,194.5L258.2,197.7L269.7,200.0L287.8,203.7L301.8,206.8L313.2,209.2L331.3,213.7L345.3,216.6L356.8,219.6L370.8,222.6L388.9,226.8L402.9,229.8L414.4,231.9" fill="none" stroke="#2a78d6" stroke-width="2" stroke-linejoin="round"/>
+<path d="M56.0,153.5L99.5,163.1L125.0,168.7L143.1,172.6L157.1,175.7L168.6,178.2L186.6,182.2L200.7,185.3L212.1,187.8L226.1,190.8L244.2,194.8L258.2,197.9L269.7,200.4L287.8,204.4L301.8,207.4L313.2,209.9L331.3,213.9L345.3,217.0L356.8,219.5L370.8,222.6L388.9,226.5L402.9,229.6L414.4,232.1" fill="none" stroke="#898781" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5 4"/>
+<path d="M56.0,132.2L99.5,122.8L125.0,117.3L143.1,113.4L157.1,110.3L168.6,107.9L186.6,104.2L200.7,101.4L212.1,98.9L226.1,96.0L244.2,92.1L258.2,89.2L269.7,86.7L287.8,82.9L301.8,79.9L313.2,77.4L331.3,73.5L345.3,70.5L356.8,68.0L370.8,65.0L388.9,61.1L402.9,58.0L414.4,55.5" fill="none" stroke="#eb6834" stroke-width="2" stroke-linejoin="round"/>
+<path d="M56.0,134.1L99.5,124.5L125.0,118.9L143.1,115.0L157.1,111.9L168.6,109.4L186.6,105.4L200.7,102.3L212.1,99.8L226.1,96.8L244.2,92.8L258.2,89.7L269.7,87.2L287.8,83.2L301.8,80.2L313.2,77.7L331.3,73.7L345.3,70.6L356.8,68.1L370.8,65.0L388.9,61.1L402.9,58.0L414.4,55.5" fill="none" stroke="#898781" stroke-width="2" stroke-linejoin="round" stroke-dasharray="5 4"/>
+<line x1="496" x2="508" y1="55.49533093843854" y2="55.49533093843854" stroke="#898781" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="512" y="59.49533093843854" fill="#52514e">7 n</text>
+<line x1="496" x2="508" y1="69.49533093843854" y2="69.49533093843854" stroke="#eb6834" stroke-width="2"/>
+<text x="512" y="73.49533093843854" fill="#52514e">interface length</text>
+<line x1="496" x2="508" y1="231.92048479525684" y2="231.92048479525684" stroke="#2a78d6" stroke-width="2"/>
+<text x="512" y="235.92048479525684" fill="#52514e">ξ (mean of 6)</text>
+<line x1="496" x2="508" y1="245.92048479525684" y2="245.92048479525684" stroke="#898781" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="512" y="249.92048479525684" fill="#52514e">1.7 / n</text>
+</svg>

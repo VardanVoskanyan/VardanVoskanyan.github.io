@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="267.6" viewBox="0 0 840 267.6">
+<rect x="0.5" y="0.5" width="839" height="266.6" rx="10" fill="#f6f7f9" stroke="#e3e6ea"/>
+<defs>
+
+</defs>
+<text x="105" y="30" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#1c1e21">the 3×3×3 cube</text>
+<g transform="translate(0.2 40)">
+<g transform="translate(104.8 104.8)">
+<circle cx="26.66" cy="15.39" r="63.08" fill="none" stroke="#5b6169" stroke-opacity="0.55" stroke-width="1"/>
+<circle cx="26.66" cy="15.39" r="53.2" fill="none" stroke="#5b6169" stroke-opacity="0.55" stroke-width="1"/>
+<circle cx="26.66" cy="15.39" r="43.32" fill="none" stroke="#5b6169" stroke-opacity="0.55" stroke-width="1"/>
+<text x="50.43" y="74.23" dy="0.36em" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9.12" font-weight="600" fill="#1c1e21" stroke="#f6f7f9" stroke-width="3" paint-order="stroke">L</text>
+<text x="46.73" y="65.07" dy="0.36em" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9.12" font-weight="600" fill="#1c1e21" stroke="#f6f7f9" stroke-width="3" paint-order="stroke">M</text>
+<text x="43.03" y="55.91" dy="0.36em" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9.12" font-weight="600" fill="#1c1e21" stroke="#f6f7f9" stroke-width="3" paint-order="stroke">R</text>
+<circle cx="0" cy="-30.78" r="63.08" fill="none" stroke="#5b6169" stroke-opacity="0.55" stroke-width="1"/>
+<circle cx="0" cy="-30.78" r="53.2" fill="none" stroke="#5b6169" stroke-opacity="0.55" stroke-width="1"/>
+<circle cx="0" cy="-30.78" r="43.32" fill="none" stroke="#5b6169" stroke-opacity="0.55" stroke-width="1"/>
+<text x="0" y="-94.24" dy="0.36em" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9.12" font-weight="600" fill="#1c1e21" stroke="#f6f7f9" stroke-width="3" paint-order="stroke">D</text>
+<text x="0" y="-84.36" dy="0.36em" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9.12" font-weight="600" fill="#1c1e21" stroke="#f6f7f9" stroke-width="3" paint-order="stroke">E</text>
+<text x="0" y="-74.48" dy="0.36em" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9.12" font-weight="600" fill="#1c1e21" stroke="#f6f7f9" stroke-width="3" paint-order="stroke">U</text>
+<circle cx="-26.66" cy="15.39" r="63.08" fill="none" stroke="#5b6169" stroke-opacity="0.55" stroke-width="1"/>
+<circle cx="-26.66" cy="15.39" r="53.2" fill="none" stroke="#5b6169" stroke-opacity="0.55" stroke-width="1"/>
+<circle cx="-26.66" cy="15.39" r="43.32" fill="none" stroke="#5b6169" stroke-opacity="0.55" stroke-width="1"/>
+<text x="-50.43" y="74.23" dy="0.36em" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9.12" font-weight="600" fill="#1c1e21" stroke="#f6f7f9" stroke-width="3" paint-order="stroke">B</text>
+<text x="-46.73" y="65.07" dy="0.36em" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9.12" font-weight="600" fill="#1c1e21" stroke="#f6f7f9" stroke-width="3" paint-order="stroke">S</text>
+<text x="-43.03" y="55.91" dy="0.36em" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9.12" font-weight="600" fill="#1c1e21" stroke="#f6f7f9" stroke-width="3" paint-order="stroke">F</text>
+<circle cx="0" cy="-41.78" r="3.23" fill="#f7f5ef" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-10.77" cy="-35.38" r="3.23" fill="#f7f5ef" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-19.72" cy="-27.37" r="3.23" fill="#f7f5ef" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="10.77" cy="-35.38" r="3.23" fill="#f7f5ef" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="0" cy="-30.65" r="3.23" fill="#f7f5ef" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-8.94" cy="-24.14" r="3.23" fill="#f7f5ef" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="19.72" cy="-27.37" r="3.23" fill="#f7f5ef" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="8.94" cy="-24.14" r="3.23" fill="#f7f5ef" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="0" cy="-18.76" r="3.23" fill="#f7f5ef" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-62.84" cy="-36.28" r="3.23" fill="#f58f29" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-62.69" cy="-23.75" r="3.23" fill="#f58f29" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-60.22" cy="-12" r="3.23" fill="#f58f29" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-51.91" cy="-42.41" r="3.23" fill="#f58f29" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-53.2" cy="-30.72" r="3.23" fill="#f58f29" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-52.04" cy="-19.72" r="3.23" fill="#f58f29" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-40.5" cy="-46.15" r="3.23" fill="#f58f29" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-43.09" cy="-35.21" r="3.23" fill="#f58f29" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-42.9" cy="-24.77" r="3.23" fill="#f58f29" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-36.18" cy="20.89" r="3.23" fill="#2ba36c" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-36.03" cy="8.36" r="3.23" fill="#2ba36c" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-33.56" cy="-3.39" r="3.23" fill="#2ba36c" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-25.26" cy="27.02" r="3.23" fill="#2ba36c" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-26.54" cy="15.33" r="3.23" fill="#2ba36c" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-25.38" cy="4.33" r="3.23" fill="#2ba36c" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-13.84" cy="30.76" r="3.23" fill="#2ba36c" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-16.44" cy="19.82" r="3.23" fill="#2ba36c" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-16.24" cy="9.38" r="3.23" fill="#2ba36c" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="36.18" cy="20.89" r="3.23" fill="#d9423f" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="25.26" cy="27.02" r="3.23" fill="#d9423f" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="13.84" cy="30.76" r="3.23" fill="#d9423f" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="36.03" cy="8.36" r="3.23" fill="#d9423f" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="26.54" cy="15.33" r="3.23" fill="#d9423f" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="16.44" cy="19.82" r="3.23" fill="#d9423f" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="33.56" cy="-3.39" r="3.23" fill="#d9423f" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="25.38" cy="4.33" r="3.23" fill="#d9423f" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="16.24" cy="9.38" r="3.23" fill="#d9423f" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="62.84" cy="-36.28" r="3.23" fill="#2c6fdb" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="51.91" cy="-42.41" r="3.23" fill="#2c6fdb" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="40.5" cy="-46.15" r="3.23" fill="#2c6fdb" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="62.69" cy="-23.75" r="3.23" fill="#2c6fdb" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="53.2" cy="-30.72" r="3.23" fill="#2c6fdb" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="43.09" cy="-35.21" r="3.23" fill="#2c6fdb" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="60.22" cy="-12" r="3.23" fill="#2c6fdb" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="52.04" cy="-19.72" r="3.23" fill="#2c6fdb" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="42.9" cy="-24.77" r="3.23" fill="#2c6fdb" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="0" cy="72.56" r="3.23" fill="#f7cb3d" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-10.77" cy="66.16" r="3.23" fill="#f7cb3d" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-19.72" cy="58.15" r="3.23" fill="#f7cb3d" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="10.77" cy="66.16" r="3.23" fill="#f7cb3d" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="0" cy="61.43" r="3.23" fill="#f7cb3d" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="-8.94" cy="54.92" r="3.23" fill="#f7cb3d" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="19.72" cy="58.15" r="3.23" fill="#f7cb3d" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="8.94" cy="54.92" r="3.23" fill="#f7cb3d" stroke="#20232a" stroke-width="1.1"/>
+<circle cx="0" cy="49.54" r="3.23" fill="#f7cb3d" stroke="#20232a" stroke-width="1.1"/>
+</g>
+</g>
+<text x="315" y="30" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#1c1e21">the Infini-Cube, solved</text>
+<g transform="translate(210.2 40)">
+<g transform="translate(104.8 104.8)">
+<circle cx="26.66" cy="15.39" r="68.02" fill="none" stroke="#e3e6ea" stroke-width="1"/>
+<circle cx="26.66" cy="15.39" r="38.38" fill="none" stroke="#e3e6ea" stroke-width="1"/>
+<circle cx="0" cy="-30.78" r="68.02" fill="none" stroke="#e3e6ea" stroke-width="1"/>
+<circle cx="0" cy="-30.78" r="38.38" fill="none" stroke="#e3e6ea" stroke-width="1"/>
+<circle cx="-26.66" cy="15.39" r="68.02" fill="none" stroke="#e3e6ea" stroke-width="1"/>
+<circle cx="-26.66" cy="15.39" r="38.38" fill="none" stroke="#e3e6ea" stroke-width="1"/>
+<path d="M0 -47.19A68.02 68.02 0 0 1 29.58 -22.88A38.38 38.38 0 0 0 0 -12.22A38.38 38.38 0 0 0 -29.58 -22.88A68.02 68.02 0 0 1 0 -47.19z" fill="#f7f5ef" stroke="#f7f5ef" stroke-width="0.5"/>
+<path d="M0 -47.19A68.02 68.02 0 0 1 29.58 -22.88A38.38 38.38 0 0 0 0 -12.22A38.38 38.38 0 0 0 -29.58 -22.88A68.02 68.02 0 0 1 0 -47.19z" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<text x="0" y="-30.65" dy="0.36em" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.4" font-weight="600" fill="#20232a" fill-opacity="0.85">U</text>
+<path d="M-67.52 -38.98A68.02 68.02 0 0 1 -31.68 -52.44A38.38 38.38 0 0 0 -37.24 -21.5A38.38 38.38 0 0 0 -61.26 -1.21A68.02 68.02 0 0 1 -67.52 -38.98z" fill="#f58f29" stroke="#f58f29" stroke-width="0.5"/>
+<path d="M-67.52 -38.98A68.02 68.02 0 0 1 -31.68 -52.44A38.38 38.38 0 0 0 -37.24 -21.5A38.38 38.38 0 0 0 -61.26 -1.21A68.02 68.02 0 0 1 -67.52 -38.98z" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<text x="-53.2" y="-30.72" dy="0.36em" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.4" font-weight="600" fill="#20232a" fill-opacity="0.85">L</text>
+<path d="M-40.87 23.59A68.02 68.02 0 0 0 -5.02 37.05A38.38 38.38 0 0 1 -10.59 6.11A38.38 38.38 0 0 1 -34.6 -14.18A68.02 68.02 0 0 0 -40.87 23.59z" fill="#2ba36c" stroke="#2ba36c" stroke-width="0.5"/>
+<path d="M-40.87 23.59A68.02 68.02 0 0 0 -5.02 37.05A38.38 38.38 0 0 1 -10.59 6.11A38.38 38.38 0 0 1 -34.6 -14.18A68.02 68.02 0 0 0 -40.87 23.59z" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<text x="-26.54" y="15.33" dy="0.36em" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.4" font-weight="600" fill="#ffffff" fill-opacity="0.85">F</text>
+<path d="M40.87 23.59A68.02 68.02 0 0 0 34.6 -14.18A38.38 38.38 0 0 1 10.59 6.11A38.38 38.38 0 0 1 5.02 37.05A68.02 68.02 0 0 0 40.87 23.59z" fill="#d9423f" stroke="#d9423f" stroke-width="0.5"/>
+<path d="M40.87 23.59A68.02 68.02 0 0 0 34.6 -14.18A38.38 38.38 0 0 1 10.59 6.11A38.38 38.38 0 0 1 5.02 37.05A68.02 68.02 0 0 0 40.87 23.59z" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<text x="26.54" y="15.33" dy="0.36em" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.4" font-weight="600" fill="#ffffff" fill-opacity="0.85">R</text>
+<path d="M67.52 -38.98A68.02 68.02 0 0 1 61.26 -1.21A38.38 38.38 0 0 0 37.24 -21.5A38.38 38.38 0 0 0 31.68 -52.44A68.02 68.02 0 0 1 67.52 -38.98z" fill="#2c6fdb" stroke="#2c6fdb" stroke-width="0.5"/>
+<path d="M67.52 -38.98A68.02 68.02 0 0 1 61.26 -1.21A38.38 38.38 0 0 0 37.24 -21.5A38.38 38.38 0 0 0 31.68 -52.44A68.02 68.02 0 0 1 67.52 -38.98z" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<text x="53.2" y="-30.72" dy="0.36em" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.4" font-weight="600" fill="#ffffff" fill-opacity="0.85">B</text>
+<path d="M0 77.97A68.02 68.02 0 0 0 29.58 53.66A38.38 38.38 0 0 1 0 43A38.38 38.38 0 0 1 -29.58 53.66A68.02 68.02 0 0 0 0 77.97z" fill="#f7cb3d" stroke="#f7cb3d" stroke-width="0.5"/>
+<path d="M0 77.97A68.02 68.02 0 0 0 29.58 53.66A38.38 38.38 0 0 1 0 43A38.38 38.38 0 0 1 -29.58 53.66A68.02 68.02 0 0 0 0 77.97z" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<text x="0" y="61.43" dy="0.36em" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.4" font-weight="600" fill="#20232a" fill-opacity="0.85">D</text>
+</g>
+</g>
+<text x="525" y="30" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="400" fill="#1c1e21">U[0.2,0.55]</text>
+<g transform="translate(420.2 40)">
+<g transform="translate(104.8 104.8)">
+<circle cx="26.66" cy="15.39" r="68.02" fill="none" stroke="#e3e6ea" stroke-width="1"/>
+<circle cx="26.66" cy="15.39" r="38.38" fill="none" stroke="#e3e6ea" stroke-width="1"/>
+<circle cx="0" cy="-30.78" r="68.02" fill="none" stroke="#e3e6ea" stroke-width="1"/>
+<circle cx="0" cy="-30.78" r="38.38" fill="none" stroke="#e3e6ea" stroke-width="1"/>
+<circle cx="-26.66" cy="15.39" r="68.02" fill="none" stroke="#e3e6ea" stroke-width="1"/>
+<circle cx="-26.66" cy="15.39" r="38.38" fill="none" stroke="#e3e6ea" stroke-width="1"/>
+<circle cx="0" cy="-30.78" r="49.5" fill="none" stroke="#20232a" stroke-opacity="0.13" stroke-width="10.37"/>
+<path d="M0 -47.19A68.02 68.02 0 0 1 7.23 -43.59A62.09 62.09 0 0 0 -22.34 -22.75A38.38 38.38 0 0 0 -29.58 -22.88A68.02 68.02 0 0 1 0 -47.19zM7.23 -43.59A68.02 68.02 0 0 1 15.35 -38.11A54.68 54.68 0 0 0 -14.23 -20.92A38.38 38.38 0 0 0 -22.34 -22.75A62.09 62.09 0 0 1 7.23 -43.59zM15.35 -38.11A68.02 68.02 0 0 1 18.31 -35.65A51.72 51.72 0 0 0 -11.27 -19.77A38.38 38.38 0 0 0 -14.23 -20.92A54.68 54.68 0 0 1 15.35 -38.11zM18.31 -35.65A68.02 68.02 0 0 1 24.98 -28.89A44.31 44.31 0 0 0 -4.6 -16.02A38.38 38.38 0 0 0 -11.27 -19.77A51.72 51.72 0 0 1 18.31 -35.65zM24.98 -28.89A68.02 68.02 0 0 1 29.58 -22.88A38.38 38.38 0 0 0 0 -12.22A38.38 38.38 0 0 0 -4.6 -16.02A44.31 44.31 0 0 1 24.98 -28.89z" fill="#f7f5ef" stroke="#f7f5ef" stroke-width="0.5"/>
+<path d="M0 -47.19A68.02 68.02 0 0 1 29.58 -22.88A38.38 38.38 0 0 0 0 -12.22A38.38 38.38 0 0 0 -29.58 -22.88A68.02 68.02 0 0 1 0 -47.19z" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M-67.52 -38.98A68.02 68.02 0 0 1 -60.79 -43.45A62.09 62.09 0 0 0 -57.53 -7.41A38.38 38.38 0 0 0 -61.26 -1.21A68.02 68.02 0 0 1 -67.52 -38.98zM-60.79 -43.45A68.02 68.02 0 0 1 -51.99 -47.74A54.68 54.68 0 0 0 -51.89 -13.53A38.38 38.38 0 0 0 -57.53 -7.41A62.09 62.09 0 0 1 -60.79 -43.45zM-39.18 -51.47A68.02 68.02 0 0 1 -31.68 -52.44A38.38 38.38 0 0 0 -37.24 -21.5A38.38 38.38 0 0 0 -42.83 -19.42A44.31 44.31 0 0 1 -39.18 -51.47z" fill="#f58f29" stroke="#f58f29" stroke-width="0.5"/>
+<path d="M-51.99 -47.74A68.02 68.02 0 0 1 -48.38 -49.07A51.72 51.72 0 0 0 -49.41 -15.51A38.38 38.38 0 0 0 -51.89 -13.53A54.68 54.68 0 0 1 -51.99 -47.74zM-48.38 -49.07A68.02 68.02 0 0 1 -39.18 -51.47A44.31 44.31 0 0 0 -42.83 -19.42A38.38 38.38 0 0 0 -49.41 -15.51A51.72 51.72 0 0 1 -48.38 -49.07z" fill="#2ba36c" stroke="#2ba36c" stroke-width="0.5"/>
+<path d="M-67.52 -38.98A68.02 68.02 0 0 1 -31.68 -52.44A38.38 38.38 0 0 0 -37.24 -21.5A38.38 38.38 0 0 0 -61.26 -1.21A68.02 68.02 0 0 1 -67.52 -38.98z" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M-40.87 23.59A68.02 68.02 0 0 0 -34.13 28.06A62.09 62.09 0 0 1 -35.28 11A54.68 54.68 0 0 1 -40.68 5.76A68.02 68.02 0 0 0 -40.87 23.59zM-37.51 -7.19A44.31 44.31 0 0 0 -33.13 -1.36A62.09 62.09 0 0 1 -30.87 -7.98A38.38 38.38 0 0 1 -34.6 -14.18A68.02 68.02 0 0 0 -37.51 -7.19zM-34.13 28.06A68.02 68.02 0 0 0 -25.33 32.35A54.68 54.68 0 0 1 -28.02 16.18A54.68 54.68 0 0 1 -35.28 11A62.09 62.09 0 0 0 -34.13 28.06zM-33.13 -1.36A44.31 44.31 0 0 0 -26.91 4.42A54.68 54.68 0 0 1 -25.23 -1.86A38.38 38.38 0 0 1 -30.87 -7.98A62.09 62.09 0 0 0 -33.13 -1.36zM-25.33 32.35A68.02 68.02 0 0 0 -21.72 33.68A51.72 51.72 0 0 1 -25 17.85A54.68 54.68 0 0 1 -28.02 16.18A54.68 54.68 0 0 0 -25.33 32.35zM-26.91 4.42A44.31 44.31 0 0 0 -24.26 6.3A51.72 51.72 0 0 1 -22.76 0.12A38.38 38.38 0 0 1 -25.23 -1.86A54.68 54.68 0 0 0 -26.91 4.42zM-21.72 33.68A68.02 68.02 0 0 0 -12.53 36.08A44.31 44.31 0 0 1 -17.28 21.1A54.68 54.68 0 0 1 -25 17.85A51.72 51.72 0 0 0 -21.72 33.68zM-24.26 6.3A44.31 44.31 0 0 0 -17.32 10A44.31 44.31 0 0 1 -16.17 4.03A38.38 38.38 0 0 1 -22.76 0.12A51.72 51.72 0 0 0 -24.26 6.3zM-12.53 36.08A68.02 68.02 0 0 0 -5.02 37.05A38.38 38.38 0 0 1 -11 22.78A54.68 54.68 0 0 1 -17.28 21.1A44.31 44.31 0 0 0 -12.53 36.08zM-17.32 10A44.31 44.31 0 0 0 -11.57 11.99A38.38 38.38 0 0 1 -10.59 6.11A38.38 38.38 0 0 1 -16.17 4.03A44.31 44.31 0 0 0 -17.32 10z" fill="#2ba36c" stroke="#2ba36c" stroke-width="0.5"/>
+<path d="M-40.68 5.76A54.68 54.68 0 0 0 -35.28 11A62.09 62.09 0 0 1 -33.13 -1.36A44.31 44.31 0 0 1 -37.51 -7.19A68.02 68.02 0 0 0 -40.68 5.76zM-35.28 11A54.68 54.68 0 0 0 -28.02 16.18A54.68 54.68 0 0 1 -26.91 4.42A44.31 44.31 0 0 1 -33.13 -1.36A62.09 62.09 0 0 0 -35.28 11zM-28.02 16.18A54.68 54.68 0 0 0 -25 17.85A51.72 51.72 0 0 1 -24.26 6.3A44.31 44.31 0 0 1 -26.91 4.42A54.68 54.68 0 0 0 -28.02 16.18zM-25 17.85A54.68 54.68 0 0 0 -17.28 21.1A44.31 44.31 0 0 1 -17.32 10A44.31 44.31 0 0 1 -24.26 6.3A51.72 51.72 0 0 0 -25 17.85zM-17.28 21.1A54.68 54.68 0 0 0 -11 22.78A38.38 38.38 0 0 1 -11.57 11.99A44.31 44.31 0 0 1 -17.32 10A44.31 44.31 0 0 0 -17.28 21.1z" fill="#d9423f" stroke="#d9423f" stroke-width="0.5"/>
+<path d="M-40.87 23.59A68.02 68.02 0 0 0 -5.02 37.05A38.38 38.38 0 0 1 -10.59 6.11A38.38 38.38 0 0 1 -34.6 -14.18A68.02 68.02 0 0 0 -40.87 23.59z" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M40.87 23.59A68.02 68.02 0 0 0 41.36 15.53A62.09 62.09 0 0 1 8.53 30.72A38.38 38.38 0 0 1 5.02 37.05A68.02 68.02 0 0 0 40.87 23.59zM41.36 15.53A68.02 68.02 0 0 0 40.68 5.76A54.68 54.68 0 0 1 11 22.78A38.38 38.38 0 0 1 8.53 30.72A62.09 62.09 0 0 0 41.36 15.53zM37.51 -7.19A68.02 68.02 0 0 0 34.6 -14.18A38.38 38.38 0 0 1 10.59 6.11A38.38 38.38 0 0 1 11.57 11.99A44.31 44.31 0 0 0 37.51 -7.19z" fill="#d9423f" stroke="#d9423f" stroke-width="0.5"/>
+<path d="M40.68 5.76A68.02 68.02 0 0 0 40.03 1.97A51.72 51.72 0 0 1 11.49 19.65A38.38 38.38 0 0 1 11 22.78A54.68 54.68 0 0 0 40.68 5.76zM40.03 1.97A68.02 68.02 0 0 0 37.51 -7.19A44.31 44.31 0 0 1 11.57 11.99A38.38 38.38 0 0 1 11.49 19.65A51.72 51.72 0 0 0 40.03 1.97z" fill="#2c6fdb" stroke="#2c6fdb" stroke-width="0.5"/>
+<path d="M40.87 23.59A68.02 68.02 0 0 0 34.6 -14.18A38.38 38.38 0 0 1 10.59 6.11A38.38 38.38 0 0 1 5.02 37.05A68.02 68.02 0 0 0 40.87 23.59z" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M51.99 -47.74A54.68 54.68 0 0 1 53.82 -40.44A62.09 62.09 0 0 0 42.04 -44.77A44.31 44.31 0 0 0 39.18 -51.47A68.02 68.02 0 0 1 51.99 -47.74zM53.82 -40.44A54.68 54.68 0 0 1 54.68 -31.57A54.68 54.68 0 0 0 43.94 -36.49A44.31 44.31 0 0 0 42.04 -44.77A62.09 62.09 0 0 1 53.82 -40.44zM54.68 -31.57A54.68 54.68 0 0 1 54.62 -28.12A51.72 51.72 0 0 0 44.24 -33.25A44.31 44.31 0 0 0 43.94 -36.49A54.68 54.68 0 0 1 54.68 -31.57zM54.62 -28.12A54.68 54.68 0 0 1 53.57 -19.81A44.31 44.31 0 0 0 43.98 -25.39A44.31 44.31 0 0 0 44.24 -33.25A51.72 51.72 0 0 1 54.62 -28.12zM53.57 -19.81A54.68 54.68 0 0 1 51.89 -13.53A38.38 38.38 0 0 0 42.83 -19.42A44.31 44.31 0 0 0 43.98 -25.39A44.31 44.31 0 0 1 53.57 -19.81z" fill="#f58f29" stroke="#f58f29" stroke-width="0.5"/>
+<path d="M67.52 -38.98A68.02 68.02 0 0 1 68.02 -30.92A62.09 62.09 0 0 0 53.82 -40.44A54.68 54.68 0 0 0 51.99 -47.74A68.02 68.02 0 0 1 67.52 -38.98zM39.18 -51.47A44.31 44.31 0 0 1 42.04 -44.77A62.09 62.09 0 0 0 35.18 -46.11A38.38 38.38 0 0 0 31.68 -52.44A68.02 68.02 0 0 1 39.18 -51.47zM68.02 -30.92A68.02 68.02 0 0 1 67.34 -21.15A54.68 54.68 0 0 0 54.68 -31.57A54.68 54.68 0 0 0 53.82 -40.44A62.09 62.09 0 0 1 68.02 -30.92zM42.04 -44.77A44.31 44.31 0 0 1 43.94 -36.49A54.68 54.68 0 0 0 37.66 -38.17A38.38 38.38 0 0 0 35.18 -46.11A62.09 62.09 0 0 1 42.04 -44.77zM67.34 -21.15A68.02 68.02 0 0 1 66.68 -17.36A51.72 51.72 0 0 0 54.62 -28.12A54.68 54.68 0 0 0 54.68 -31.57A54.68 54.68 0 0 1 67.34 -21.15zM43.94 -36.49A44.31 44.31 0 0 1 44.24 -33.25A51.72 51.72 0 0 0 38.14 -35.04A38.38 38.38 0 0 0 37.66 -38.17A54.68 54.68 0 0 1 43.94 -36.49zM66.68 -17.36A68.02 68.02 0 0 1 64.16 -8.2A44.31 44.31 0 0 0 53.57 -19.81A54.68 54.68 0 0 0 54.62 -28.12A51.72 51.72 0 0 1 66.68 -17.36zM44.24 -33.25A44.31 44.31 0 0 1 43.98 -25.39A44.31 44.31 0 0 0 38.23 -27.38A38.38 38.38 0 0 0 38.14 -35.04A51.72 51.72 0 0 1 44.24 -33.25zM64.16 -8.2A68.02 68.02 0 0 1 61.26 -1.21A38.38 38.38 0 0 0 51.89 -13.53A54.68 54.68 0 0 0 53.57 -19.81A44.31 44.31 0 0 1 64.16 -8.2zM43.98 -25.39A44.31 44.31 0 0 1 42.83 -19.42A38.38 38.38 0 0 0 37.24 -21.5A38.38 38.38 0 0 0 38.23 -27.38A44.31 44.31 0 0 1 43.98 -25.39z" fill="#2c6fdb" stroke="#2c6fdb" stroke-width="0.5"/>
+<path d="M67.52 -38.98A68.02 68.02 0 0 1 61.26 -1.21A38.38 38.38 0 0 0 37.24 -21.5A38.38 38.38 0 0 0 31.68 -52.44A68.02 68.02 0 0 1 67.52 -38.98z" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M0 77.97A68.02 68.02 0 0 0 7.23 74.37A62.09 62.09 0 0 1 -22.34 53.53A38.38 38.38 0 0 1 -29.58 53.66A68.02 68.02 0 0 0 0 77.97zM7.23 74.37A68.02 68.02 0 0 0 15.35 68.89A54.68 54.68 0 0 1 -14.23 51.7A38.38 38.38 0 0 1 -22.34 53.53A62.09 62.09 0 0 0 7.23 74.37zM15.35 68.89A68.02 68.02 0 0 0 18.31 66.43A51.72 51.72 0 0 1 -11.27 50.55A38.38 38.38 0 0 1 -14.23 51.7A54.68 54.68 0 0 0 15.35 68.89zM18.31 66.43A68.02 68.02 0 0 0 24.98 59.67A44.31 44.31 0 0 1 -4.6 46.8A38.38 38.38 0 0 1 -11.27 50.55A51.72 51.72 0 0 0 18.31 66.43zM24.98 59.67A68.02 68.02 0 0 0 29.58 53.66A38.38 38.38 0 0 1 0 43A38.38 38.38 0 0 1 -4.6 46.8A44.31 44.31 0 0 0 24.98 59.67z" fill="#f7cb3d" stroke="#f7cb3d" stroke-width="0.5"/>
+<path d="M0 77.97A68.02 68.02 0 0 0 29.58 53.66A38.38 38.38 0 0 1 0 43A38.38 38.38 0 0 1 -29.58 53.66A68.02 68.02 0 0 0 0 77.97z" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+</g>
+</g>
+<text x="735" y="30" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="400" fill="#1c1e21">[R[0.3,0.45], U[0.55,0.7]]</text>
+<g transform="translate(630.2 40)">
+<g transform="translate(104.8 104.8)">
+<circle cx="26.66" cy="15.39" r="68.02" fill="none" stroke="#e3e6ea" stroke-width="1"/>
+<circle cx="26.66" cy="15.39" r="38.38" fill="none" stroke="#e3e6ea" stroke-width="1"/>
+<circle cx="0" cy="-30.78" r="68.02" fill="none" stroke="#e3e6ea" stroke-width="1"/>
+<circle cx="0" cy="-30.78" r="38.38" fill="none" stroke="#e3e6ea" stroke-width="1"/>
+<circle cx="-26.66" cy="15.39" r="68.02" fill="none" stroke="#e3e6ea" stroke-width="1"/>
+<circle cx="-26.66" cy="15.39" r="38.38" fill="none" stroke="#e3e6ea" stroke-width="1"/>
+<path d="M0 -47.19A68.02 68.02 0 0 1 10.6 -41.52A59.13 59.13 0 0 0 -18.97 -22.21A38.38 38.38 0 0 0 -29.58 -22.88A68.02 68.02 0 0 1 0 -47.19zM10.6 -41.52A68.02 68.02 0 0 1 15.35 -38.11A54.68 54.68 0 0 0 -14.23 -20.92A38.38 38.38 0 0 0 -18.97 -22.21A59.13 59.13 0 0 1 10.6 -41.52zM15.35 -38.11A68.02 68.02 0 0 1 18.31 -35.65A51.72 51.72 0 0 0 -11.27 -19.77A38.38 38.38 0 0 0 -14.23 -20.92A54.68 54.68 0 0 1 15.35 -38.11zM18.31 -35.65A68.02 68.02 0 0 1 22.43 -31.69A47.27 47.27 0 0 0 11.83 -29.5A59.13 59.13 0 0 0 7.7 -32.73A51.72 51.72 0 0 1 18.31 -35.65zM2.96 -30.58A54.68 54.68 0 0 1 7.09 -27.64A47.27 47.27 0 0 0 -7.14 -17.66A38.38 38.38 0 0 0 -11.27 -19.77A51.72 51.72 0 0 1 2.96 -30.58zM22.43 -31.69A68.02 68.02 0 0 1 29.58 -22.88A38.38 38.38 0 0 0 0 -12.22A38.38 38.38 0 0 0 -7.14 -17.66A47.27 47.27 0 0 1 22.43 -31.69z" fill="#f7f5ef" stroke="#f7f5ef" stroke-width="0.5"/>
+<path d="M7.7 -32.73A59.13 59.13 0 0 1 11.83 -29.5A47.27 47.27 0 0 0 7.09 -27.64A54.68 54.68 0 0 0 2.96 -30.58A51.72 51.72 0 0 1 7.7 -32.73z" fill="#f58f29" stroke="#f58f29" stroke-width="0.5"/>
+<path d="M0 -47.19A68.02 68.02 0 0 1 29.58 -22.88A38.38 38.38 0 0 0 0 -12.22A38.38 38.38 0 0 0 -29.58 -22.88A68.02 68.02 0 0 1 0 -47.19z" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M-67.52 -38.98A68.02 68.02 0 0 1 -57.31 -45.33A59.13 59.13 0 0 0 -55.38 -10.06A38.38 38.38 0 0 0 -61.26 -1.21A68.02 68.02 0 0 1 -67.52 -38.98zM-57.31 -45.33A68.02 68.02 0 0 1 -51.99 -47.74A54.68 54.68 0 0 0 -54.34 -36.85A59.13 59.13 0 0 0 -59.04 -34.08A59.13 59.13 0 0 1 -57.31 -45.33zM-59.09 -28.64A54.68 54.68 0 0 1 -54.68 -31.57A54.68 54.68 0 0 0 -51.89 -13.53A38.38 38.38 0 0 0 -55.38 -10.06A59.13 59.13 0 0 1 -59.09 -28.64zM-51.99 -47.74A68.02 68.02 0 0 1 -48.38 -49.07A51.72 51.72 0 0 0 -49.41 -15.51A38.38 38.38 0 0 0 -51.89 -13.53A54.68 54.68 0 0 1 -51.99 -47.74zM-48.38 -49.07A68.02 68.02 0 0 1 -42.89 -50.67A47.27 47.27 0 0 0 -45.52 -18.03A38.38 38.38 0 0 0 -49.41 -15.51A51.72 51.72 0 0 1 -48.38 -49.07zM-42.89 -50.67A68.02 68.02 0 0 1 -31.68 -52.44A38.38 38.38 0 0 0 -37.24 -21.5A38.38 38.38 0 0 0 -45.52 -18.03A47.27 47.27 0 0 1 -42.89 -50.67z" fill="#f58f29" stroke="#f58f29" stroke-width="0.5"/>
+<path d="M-59.04 -34.08A59.13 59.13 0 0 1 -54.34 -36.85A54.68 54.68 0 0 0 -54.68 -31.57A54.68 54.68 0 0 0 -59.09 -28.64A59.13 59.13 0 0 1 -59.04 -34.08z" fill="#2c6fdb" stroke="#2c6fdb" stroke-width="0.5"/>
+<path d="M-67.52 -38.98A68.02 68.02 0 0 1 -31.68 -52.44A38.38 38.38 0 0 0 -37.24 -21.5A38.38 38.38 0 0 0 -61.26 -1.21A68.02 68.02 0 0 1 -67.52 -38.98z" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M-40.87 23.59A68.02 68.02 0 0 0 -30.65 29.94A59.13 59.13 0 0 1 -28.72 -5.33A38.38 38.38 0 0 1 -34.6 -14.18A68.02 68.02 0 0 0 -40.87 23.59zM-30.65 29.94A68.02 68.02 0 0 0 -25.33 32.35A54.68 54.68 0 0 1 -25.23 -1.86A38.38 38.38 0 0 1 -28.72 -5.33A59.13 59.13 0 0 0 -30.65 29.94zM-25.33 32.35A68.02 68.02 0 0 0 -21.72 33.68A51.72 51.72 0 0 1 -22.76 0.12A38.38 38.38 0 0 1 -25.23 -1.86A54.68 54.68 0 0 0 -25.33 32.35zM-21.72 33.68A68.02 68.02 0 0 0 -16.23 35.28A47.27 47.27 0 0 1 -19.63 24.99A59.13 59.13 0 0 1 -24.49 23.04A51.72 51.72 0 0 0 -21.72 33.68zM-25 17.85A54.68 54.68 0 0 0 -20.39 19.96A47.27 47.27 0 0 1 -18.86 2.64A38.38 38.38 0 0 1 -22.76 0.12A51.72 51.72 0 0 0 -25 17.85zM-16.23 35.28A68.02 68.02 0 0 0 -5.02 37.05A38.38 38.38 0 0 1 -10.59 6.11A38.38 38.38 0 0 1 -18.86 2.64A47.27 47.27 0 0 0 -16.23 35.28z" fill="#2ba36c" stroke="#2ba36c" stroke-width="0.5"/>
+<path d="M-24.49 23.04A59.13 59.13 0 0 0 -19.63 24.99A47.27 47.27 0 0 1 -20.39 19.96A54.68 54.68 0 0 1 -25 17.85A51.72 51.72 0 0 0 -24.49 23.04z" fill="#f7cb3d" stroke="#f7cb3d" stroke-width="0.5"/>
+<path d="M-40.87 23.59A68.02 68.02 0 0 0 -5.02 37.05A38.38 38.38 0 0 1 -10.59 6.11A38.38 38.38 0 0 1 -34.6 -14.18A68.02 68.02 0 0 0 -40.87 23.59z" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M32.38 18.69A59.13 59.13 0 0 0 32.43 13.25A54.68 54.68 0 0 1 28.02 16.18A54.68 54.68 0 0 1 27.69 21.46A59.13 59.13 0 0 0 32.38 18.69z" fill="#2ba36c" stroke="#2ba36c" stroke-width="0.5"/>
+<path d="M40.87 23.59A68.02 68.02 0 0 0 41.26 11.58A59.13 59.13 0 0 1 9.75 27.54A38.38 38.38 0 0 1 5.02 37.05A68.02 68.02 0 0 0 40.87 23.59zM41.26 11.58A68.02 68.02 0 0 0 40.68 5.76A54.68 54.68 0 0 1 32.43 13.25A59.13 59.13 0 0 1 32.38 18.69A59.13 59.13 0 0 0 41.26 11.58zM27.69 21.46A54.68 54.68 0 0 0 28.02 16.18A54.68 54.68 0 0 1 11 22.78A38.38 38.38 0 0 1 9.75 27.54A59.13 59.13 0 0 0 27.69 21.46zM40.68 5.76A68.02 68.02 0 0 0 40.03 1.97A51.72 51.72 0 0 1 11.49 19.65A38.38 38.38 0 0 1 11 22.78A54.68 54.68 0 0 0 40.68 5.76zM40.03 1.97A68.02 68.02 0 0 0 38.66 -3.58A47.27 47.27 0 0 1 11.72 15.02A38.38 38.38 0 0 1 11.49 19.65A51.72 51.72 0 0 0 40.03 1.97zM38.66 -3.58A68.02 68.02 0 0 0 34.6 -14.18A38.38 38.38 0 0 1 10.59 6.11A38.38 38.38 0 0 1 11.72 15.02A47.27 47.27 0 0 0 38.66 -3.58z" fill="#d9423f" stroke="#d9423f" stroke-width="0.5"/>
+<path d="M40.87 23.59A68.02 68.02 0 0 0 34.6 -14.18A38.38 38.38 0 0 1 10.59 6.11A38.38 38.38 0 0 1 5.02 37.05A68.02 68.02 0 0 0 40.87 23.59z" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M58.85 -25.08A59.13 59.13 0 0 1 58.12 -19.89A47.27 47.27 0 0 0 54.14 -23.07A54.68 54.68 0 0 0 54.62 -28.12A51.72 51.72 0 0 1 58.85 -25.08z" fill="#f7f5ef" stroke="#f7f5ef" stroke-width="0.5"/>
+<path d="M67.52 -38.98A68.02 68.02 0 0 1 67.91 -26.97A59.13 59.13 0 0 0 36.41 -42.93A38.38 38.38 0 0 0 31.68 -52.44A68.02 68.02 0 0 1 67.52 -38.98zM67.91 -26.97A68.02 68.02 0 0 1 67.34 -21.15A54.68 54.68 0 0 0 37.66 -38.17A38.38 38.38 0 0 0 36.41 -42.93A59.13 59.13 0 0 1 67.91 -26.97zM67.34 -21.15A68.02 68.02 0 0 1 66.68 -17.36A51.72 51.72 0 0 0 38.14 -35.04A38.38 38.38 0 0 0 37.66 -38.17A54.68 54.68 0 0 1 67.34 -21.15zM66.68 -17.36A68.02 68.02 0 0 1 65.32 -11.81A47.27 47.27 0 0 0 58.12 -19.89A59.13 59.13 0 0 0 58.85 -25.08A51.72 51.72 0 0 1 66.68 -17.36zM54.62 -28.12A54.68 54.68 0 0 1 54.14 -23.07A47.27 47.27 0 0 0 38.38 -30.41A38.38 38.38 0 0 0 38.14 -35.04A51.72 51.72 0 0 1 54.62 -28.12zM65.32 -11.81A68.02 68.02 0 0 1 61.26 -1.21A38.38 38.38 0 0 0 37.24 -21.5A38.38 38.38 0 0 0 38.38 -30.41A47.27 47.27 0 0 1 65.32 -11.81z" fill="#2c6fdb" stroke="#2c6fdb" stroke-width="0.5"/>
+<path d="M67.52 -38.98A68.02 68.02 0 0 1 61.26 -1.21A38.38 38.38 0 0 0 37.24 -21.5A38.38 38.38 0 0 0 31.68 -52.44A68.02 68.02 0 0 1 67.52 -38.98z" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M7.7 63.51A59.13 59.13 0 0 0 11.83 60.28A47.27 47.27 0 0 1 7.09 58.42A54.68 54.68 0 0 1 2.96 61.36A51.72 51.72 0 0 0 7.7 63.51z" fill="#d9423f" stroke="#d9423f" stroke-width="0.5"/>
+<path d="M0 77.97A68.02 68.02 0 0 0 10.6 72.3A59.13 59.13 0 0 1 -18.97 52.99A38.38 38.38 0 0 1 -29.58 53.66A68.02 68.02 0 0 0 0 77.97zM10.6 72.3A68.02 68.02 0 0 0 15.35 68.89A54.68 54.68 0 0 1 -14.23 51.7A38.38 38.38 0 0 1 -18.97 52.99A59.13 59.13 0 0 0 10.6 72.3zM15.35 68.89A68.02 68.02 0 0 0 18.31 66.43A51.72 51.72 0 0 1 -11.27 50.55A38.38 38.38 0 0 1 -14.23 51.7A54.68 54.68 0 0 0 15.35 68.89zM18.31 66.43A68.02 68.02 0 0 0 22.43 62.47A47.27 47.27 0 0 1 11.83 60.28A59.13 59.13 0 0 1 7.7 63.51A51.72 51.72 0 0 0 18.31 66.43zM2.96 61.36A54.68 54.68 0 0 0 7.09 58.42A47.27 47.27 0 0 1 -7.14 48.44A38.38 38.38 0 0 1 -11.27 50.55A51.72 51.72 0 0 0 2.96 61.36zM22.43 62.47A68.02 68.02 0 0 0 29.58 53.66A38.38 38.38 0 0 1 0 43A38.38 38.38 0 0 1 -7.14 48.44A47.27 47.27 0 0 0 22.43 62.47z" fill="#f7cb3d" stroke="#f7cb3d" stroke-width="0.5"/>
+<path d="M0 77.97A68.02 68.02 0 0 0 29.58 53.66A38.38 38.38 0 0 1 0 43A38.38 38.38 0 0 1 -29.58 53.66A68.02 68.02 0 0 0 0 77.97z" fill="none" stroke="#20232a" stroke-width="1.2" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>
