@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="A narrated explainer of singular obstacle problems: the sharp regularity of minimizers at the free boundary and the idea of the proof." />
+    <title>Sharp regularity for singular obstacle problems</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="page">
+        <a class="site-title" href="../">Vardan Voskanyan</a>
+        <nav class="site-nav">
+          <a href="../">Home</a>
+          <a href="./" aria-current="page">Publications</a>
+          <a href="../blog/">Blog</a>
+        </nav>
+      </div>
+    </header>
+    <main class="page">
+      <article>
+        <h1>Sharp regularity for singular obstacle problems</h1>
+        <p class="entry-meta">with Dami&atilde;o J. Ara&uacute;jo and Rafayel Teymurazyan &middot; Mathematische Annalen, 2022</p>
+        <div class="entry-links">
+          <a href="https://doi.org/10.1007/s00208-022-02496-4">Journal</a>
+          <a href="https://arxiv.org/abs/2210.09413">arXiv</a>
+        </div>
+
+        <video class="explainer" controls playsinline preload="metadata" poster="files/singular-obstacle.jpg">
+          <source src="files/singular-obstacle.mp4" type="video/mp4" />
+        </video>
+        <p class="explainer-note">Narrated explainer, four and a half minutes. The voice is synthetic. The pictures are one-dimensional numerical illustrations, not figures from the paper.</p>
+
+        <h2>The problem</h2>
+
+        <p>A string is fixed at its ends and has to stay above an obstacle. In higher dimensions, think of a membrane. Stretching costs energy, and so does every gap between the string and the obstacle. The string settles where the total cost is smallest. In some places it lies on the obstacle and in others it bridges over it. The points where it leaves the obstacle form the free boundary.</p>
+
+        <p>In the classical obstacle problem the cost of a gap is proportional to its size, so the pull toward the obstacle is constant. Here the cost is the gap raised to a power $\gamma &lt; 1$. The pull is then $\gamma\,(\text{gap})^{\gamma-1}$, which grows without bound as the gap closes. Functionals of this kind are used, for example, to model the density of a chemical reacting with a porous catalyst pellet.</p>
+
+        <h2>The equations</h2>
+
+        <p>Given an obstacle $\varphi$ and boundary data $g$ on a bounded domain $\Omega\subset\mathbb{R}^n$, we study minimizers of</p>
+
+        $$
+        J(v)=\int_\Omega\left(\frac{|\nabla v|^p}{p}+(v-\varphi)^{\gamma}\right)dx
+        \qquad\text{over } v\ge\varphi,\ \ v=g \text{ on } \partial\Omega,
+        $$
+
+        <p>with $0&lt;\gamma&lt;1$, $p\ge 2$ and $\varphi\in C^{1,\beta}$. Where a minimizer $u$ is above the obstacle it solves</p>
+
+        $$
+        \Delta_p u=\gamma\,(u-\varphi)^{\gamma-1}\quad\text{in } \{u&gt;\varphi\},
+        \qquad \Delta_p u=\operatorname{div}\big(|\nabla u|^{p-2}\nabla u\big).
+        $$
+
+        <p>The right-hand side blows up at the free boundary $\partial\{u&gt;\varphi\}$. The parameter $\gamma$ measures how strong the singularity is.</p>
+
+        <h2>The result</h2>
+
+        <p>The question is how fast $u$ leaves its tangent plane at a free boundary point. We prove that for every free boundary point $y$ and every small $r$,</p>
+
+        $$
+        \sup_{x\in B_r(y)}\big|u(x)-u(y)-\nabla u(y)\cdot(x-y)\big|\le C\,r^{1+\tau},
+        \qquad \tau=\min\left\{\beta,\ \frac{\gamma}{p-\gamma}\right\},
+        $$
+
+        <p>so minimizers are of class $C^{1,\tau}$ at the free boundary, and this exponent is optimal. The two terms in the minimum have different sources. On the contact side $u$ equals $\varphi$, and $\varphi$ is only $C^{1,\beta}$. On the detached side the rate is set by the singular term.</p>
+
+        <p>The formula contains the earlier results. For $p=2$ and a flat obstacle it gives $\tau=\gamma/(2-\gamma)$, the optimal exponent found by Phillips. As $\gamma\to 1$ it tends to $\min\{\beta,\ 1/(p-1)\}$, the optimal exponent for the obstacle problem for the $p$-Laplacian, due to Andersson, Lindgren and Shahgholian. For obstacles that are not flat the result is new even in the linear case $p=2$.</p>
+
+        <p>We also prove that minimizers are locally of class $C^{1,\alpha}$ with $\alpha=\min\{\sigma^-,\ \gamma/(p-\gamma),\ \beta/(p-1)\}$, where $\sigma$ is the H&ouml;lder exponent of the gradient of $p$-harmonic functions and $\sigma^-$ is any number below it.</p>
+
+        <h2>The proof: two kinds of free boundary points</h2>
+
+        <p>Earlier results for singular problems assumed a flat obstacle, which forces the gradient of the solution to vanish at the free boundary. At a free boundary point the gradients of $u$ and $\varphi$ agree, so for a general obstacle the gradient there can be large, and those methods do not work. We treat two cases.</p>
+
+        <p><strong>Small gradient.</strong> When $|\nabla\varphi(y)|\le\kappa r^{\tau}$ we use geometric tangential analysis. After normalization the singular term has a small coefficient, the minimizer is close to a solution of the $p$-obstacle problem, and the sharp regularity of that problem carries over. Iterating at the scales $8^{-k}$ gives $\sup_{B_{8^{-k}}(y)}|u|\le 8^{-(1+\tau)k}$.</p>
+
+        <p><strong>Large gradient.</strong> When the gradient is bounded away from zero we subtract the tangent plane and rescale. In the limit the equation becomes linear and uniformly elliptic, and the singular term drops out. This gives $\|u-\varphi\|_{L^\infty(B_r)}\le C\,r^{\theta}$ with $\theta=\min\{1+\beta,\ 2/(2-\gamma)\}$, which is at least $1+\tau$.</p>
+
+        <h2>About the animation</h2>
+
+        <p>The first picture is the one-dimensional problem with $p=2$: minimize $\int \big(\tfrac12 |u'|^2+(u-\varphi)^\gamma\big)\,dx$ above a smooth hill with one valley. The minimizer lies on the obstacle except for one bridge over the valley. The bridge is computed by shooting: start with zero gap at a point, integrate $u''=\gamma\,(u-\varphi)^{\gamma-1}$ across the valley, and move the starting point until the bridge closes with zero gap and matching slope on the other side. For $\gamma&lt;1$ the functional is not convex and minimizers need not be unique. The video follows the solution that continues the classical one at $\gamma=1$. For every $\gamma$ shown, its energy is lower than that of a function equal to the obstacle everywhere.</p>
+
+        <p>The two rescaling panels use the profile $u(x)=s\,x+c\,x_+^{p/(p-\gamma)}$ with $s=0$ and with $s\neq 0$, and show $u(rx)/r^{p/(p-\gamma)}$ as $r\to 0$. The nested boxes for the small-slope step are a sketch. The plot with two lines is computed: it shows the gap $u-\varphi$ near a free boundary point in one dimension for $p=4$ and $\gamma=1/2$, once for a flat obstacle and once for an obstacle with slope 1. The fitted exponents are 1.14 and 1.33, against $p/(p-\gamma)=1.143$ and $2/(2-\gamma)=1.333$. The video is rendered with <a href="https://www.manim.community/">Manim</a>.</p>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <div class="page">&copy; 2026 Vardan Voskanyan</div>
+    </footer>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+    <script>
+      window.addEventListener('load', function () {
+        if (window.renderMathInElement) {
+          renderMathInElement(document.body, {
+            delimiters: [
+              { left: '$$', right: '$$', display: true },
+              { left: '$', right: '$', display: false }
+            ]
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

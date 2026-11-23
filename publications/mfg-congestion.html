@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="A two-minute animated explainer of mean-field games with congestion: the model, the short-time existence result, and the idea of its proof." />
+    <title>Short-time existence of solutions for mean-field games with congestion</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="page">
+        <a class="site-title" href="../">Vardan Voskanyan</a>
+        <nav class="site-nav">
+          <a href="../">Home</a>
+          <a href="./" aria-current="page">Publications</a>
+          <a href="../blog/">Blog</a>
+        </nav>
+      </div>
+    </header>
+    <main class="page">
+      <article>
+        <h1>Short-time existence of solutions for mean-field games with congestion</h1>
+        <p class="entry-meta">with Diogo Gomes &middot; J. Lond. Math. Soc. (2) 92 (2015), no. 3, 778-799</p>
+        <div class="entry-links">
+          <a href="https://doi.org/10.1112/jlms/jdv052">Journal</a>
+          <a href="https://arxiv.org/abs/1503.06442">arXiv</a>
+        </div>
+
+        <video class="explainer" controls muted loop playsinline preload="metadata" poster="files/mfg-congestion.jpg">
+          <source src="files/mfg-congestion.mp4" type="video/mp4" />
+        </video>
+        <p class="explainer-note">Two-minute explainer, no sound. The crowd and the curves are a numerical solution of the system in one space dimension, not a figure from the paper.</p>
+
+        <h2>The problem</h2>
+
+        <p>A large population of agents moves on a periodic domain, the torus $\mathbb{T}^d$. Each agent controls its velocity, is also pushed around by noise, and wants to minimize a cost over a time interval $[0,T]$. Moving through a dense part of the crowd costs more than moving through an empty one. So the best plan for one agent depends on where everybody else goes, and everybody else is solving the same problem. A mean-field game describes the equilibrium: the density $m(x,t)$ that results when every agent plans optimally against that same density.</p>
+
+        <h2>The equations</h2>
+
+        <p>An agent at $x$ at time $t$ controls its velocity $v$ and pays</p>
+
+        $$
+        u(x,t)=\inf_v\ \mathbb{E}\int_t^T \Big( m^{\alpha}\,L_0(v) + V(x,m) \Big)\,ds + \Psi(X_T),
+        \qquad dX_s = v\,ds + \sqrt{2}\,dW_s ,
+        $$
+
+        <p>where $m(x,t)$ is the density of the crowd. The factor $m^\alpha$ is the congestion: the same velocity costs more where the density is high. The cost $L_0$ grows faster than quadratically in $v$. The model case is $L_0(v)=a(x)\,(1+|v|^2)^{\gamma'/2}$ with $\gamma'&gt;2$. Its Legendre transform $H_0$ then grows like $|p|^{\gamma}$ with $1/\gamma+1/\gamma'=1$, so $\gamma&lt;2$: the Hamiltonian is sub-quadratic. At equilibrium, the value function $u$ and the density $m$ solve a Hamilton-Jacobi equation coupled with a Fokker-Planck equation:</p>
+
+        $$
+        \begin{cases}
+        -u_t-\Delta u+m^{\alpha}H_0\!\left(\dfrac{Du}{m^{\alpha}}\right)=V(x,m),\\[0.8em]
+        m_t-\Delta m-\operatorname{div}\!\left(D_pH_0\!\left(\dfrac{Du}{m^{\alpha}}\right)m\right)=0,\\[0.8em]
+        u(x,T)=\Psi(x),\qquad m(x,0)=m_0(x).
+        \end{cases}
+        $$
+
+        <p>The first equation runs backward from the terminal cost and gives each agent's best plan for a given crowd. The second runs forward from the initial density and gives the crowd that results when everyone follows that plan. (The paper also allows a reference drift $b$ and $x$-dependence in $H_0$, omitted here.)</p>
+
+        <h2>The difficulty and the result</h2>
+
+        <p>The term $Du/m^{\alpha}$ makes the Hamilton-Jacobi equation singular: where the density approaches zero, it blows up. Uniqueness of smooth solutions was known from the work of P.-L. Lions. Before this paper, existence of classical solutions was known only for stationary problems with quadratic Hamiltonians and for a few explicit time-dependent examples.</p>
+
+        <p>We prove that for sub-quadratic Hamiltonians and smooth data with $m_0&gt;0$ there is a time $T_0&gt;0$ such that, for every terminal time $T\le T_0$, the system has a $C^\infty$ solution $(u,m)$ with $m&gt;0$.</p>
+
+        <h2>The proof in three steps</h2>
+
+        <p><strong>A bound on $1/m$.</strong> For $r&gt;1$, every smooth solution satisfies</p>
+
+        $$
+        \int_{\mathbb{T}^d}\frac{dx}{m^{r}(x,t)}\le C_r+C_r\int_0^t\!\!\int_{\mathbb{T}^d}\frac{dx\,ds}{m^{q}},
+        \qquad q=r+\frac{2(\gamma-1)\alpha}{2-\gamma}.
+        $$
+
+        <p>The power on the right is larger than the one on the left, and it is finite because $\gamma&lt;2$. The Sobolev inequality and interpolation turn this into</p>
+
+        $$
+        h(t)\le C+C\int_0^t h(s)^{\beta}\,ds,\qquad h(t)=\int_{\mathbb{T}^d}\frac{dx}{m^{r}(x,t)},\qquad \beta&gt;1.
+        $$
+
+        <p>A bound of this kind can blow up in finite time, so it controls $h$ only up to some time $t_1$. This is why the result is for short times. Iterating over $r$ then gives a bound on $\|1/m\|_{L^\infty}$ on $[0,T_0]$ for some $T_0&lt;t_1$.</p>
+
+        <p><strong>Regularity.</strong> Once $m$ is bounded away from zero the system is no longer singular, and a bootstrap argument bounds all derivatives of $u$ and $m$.</p>
+
+        <p><strong>Continuation.</strong> We connect the problem to a trivial one, whose solution has $m\equiv 1$, through a family of problems indexed by $\lambda\in[0,1]$. The set of $\lambda$ for which a smooth solution exists is closed because of the bounds above, and open because the linearized system is invertible, so the inverse function theorem applies. Hence it is the whole interval.</p>
+
+        <h2>About the animation</h2>
+
+        <p>The ring-shaped hall at the start is the torus in one dimension, and the gate is the minimum of the terminal cost. The two rings compare the solution with $\alpha=1$ and with $\alpha=0$; the peak densities shown are computed. The crowd and the curves are a numerical solution of the system above in one space dimension, with $L_0(v)=(1+v^2)^{\gamma'/2}$, $\gamma=1.8$, $\alpha=1$, $b=0$, $V(m)=\arctan m$ and $T=0.04$. The initial density is smooth and positive, and the terminal cost is a cosine. The dashed curve is the same problem with $\alpha=0$. The dots are sample agents that follow $dX=v\,ds+\sqrt2\,dW$ with the computed optimal velocity. The family in $\lambda$ shown near the end is the one used in the paper. The plot of the bound is the solution of $y'=Cy^{\beta}$ and is only a sketch, since the constants in the paper are not explicit. The solution is computed by a fixed-point iteration: solve the Hamilton-Jacobi equation backward for a given density, solve the Fokker-Planck equation forward with the resulting velocity, and repeat. The video is rendered with <a href="https://www.manim.community/">Manim</a>.</p>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <div class="page">&copy; 2026 Vardan Voskanyan</div>
+    </footer>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+    <script>
+      window.addEventListener('load', function () {
+        if (window.renderMathInElement) {
+          renderMathInElement(document.body, {
+            delimiters: [
+              { left: '$$', right: '$$', display: true },
+              { left: '$', right: '$', display: false }
+            ]
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
