@@ -25,7 +25,7 @@
         <h1>Dimensionless Operations, Part I</h1>
         <p class="entry-meta">July 4, 2026</p>
 
-        <p><em>Part of a loose series on operations that don't care how big their input is. This first post lays out the ideas and pushes on them a bit; it is still a draft and does not end in a conclusion.</em></p>
+        <p><em>Part of a loose series on operations that don't care how big their input is. This first post lays out the ideas and three ways to formalise them; the open ends are collected at the bottom.</em></p>
 
         <h2>The puzzle</h2>
 
@@ -44,7 +44,7 @@
 
         <p>Softmax is a slightly different example: it maps $\R^n$ to $\R^n$ rather than reducing its input to a scalar, but it shares the same property of having a natural definition for every input dimension.</p>
 
-        <p>It's worth mentioning that some of these operations, like mean, median, and std, actually depend on the dimension through normalisation; we still consider them dimensionless, though, since there's a natural way to define them consistently for any dimension.</p>
+        <p>It's worth mentioning that some of these operations, like mean and std, actually depend on the dimension through normalisation; we still consider them dimensionless, though, since there's a natural way to define them consistently for any dimension.</p>
 
         <p>Pooling layers in Convolutional Neural Networks are a typical example of operations with this property.</p>
 
@@ -64,7 +64,7 @@
         \Phi(x) := \varphi_n(x), \quad \forall\, x \in \R^n.
         $$
 
-        <p>However, to make sense of this we also need some kind of consistency condition &mdash; otherwise $\varphi_n$ could be a completely unrelated function for each $n$. This turns out not to be so straightforward: what should "consistency" even mean here?</p>
+        <p>However, to make sense of this we also need some kind of consistency condition. Otherwise $\varphi_n$ could be a completely unrelated function for each $n$. This turns out not to be so straightforward: what should "consistency" even mean here?</p>
 
         <p><strong>Consistency condition:</strong> $\varphi_{n+1}$ should be "consistent with" $\varphi_n$.</p>
 
@@ -90,22 +90,20 @@
         <p><img class="figure-compact" src="images/phi-consistency.png" alt="Commutative triangle: R^k maps to R^n via r_kn, and both R^k and R^n map to R via phi_k and phi_n, with phi_n composed with r_kn equal to phi_k." /></p>
         <p><em>The consistency condition for $\varphi$: embedding into $\R^n$ via $r_{k,n}$ and then applying $\varphi_n$ should agree with applying $\varphi_k$ directly.</em></p>
 
-        <p>Natural R-systems for the operations we discussed above can be defined as follows. Write $m = \operatorname{max}(x_1,\ldots,x_k)$ (similarly for min, mean); then</p>
+        <p>Natural R-systems for the operations we discussed above can be defined as follows:</p>
 
         $$
         \begin{aligned}
-        \operatorname{max}\colon &amp;\ r_{k,n}(x_1,\ldots,x_k) = (x_1,\ldots,x_k, m, \ldots, m) \in \R^n, \quad m = \operatorname{max}(x_1,\ldots,x_k),\\
-        \operatorname{min}\colon &amp;\ r_{k,n}(x_1,\ldots,x_k) = (x_1,\ldots,x_k, m, \ldots, m) \in \R^n, \quad m = \operatorname{min}(x_1,\ldots,x_k),\\
-        \operatorname{mean}\colon &amp;\ r_{k,n}(x_1,\ldots,x_k) = (x_1,\ldots,x_k, m, \ldots, m) \in \R^n, \quad m = \operatorname{mean}(x_1,\ldots,x_k),\\
+        \operatorname{max},\ \operatorname{min},\ \operatorname{mean}\colon &amp;\ r_{k,n}(x_1,\ldots,x_k) = (x_1,\ldots,x_k, m, \ldots, m) \in \R^n, \quad m = \varphi_k(x_1,\ldots,x_k),\\
         \operatorname{sum}\colon &amp;\ r_{k,n}(x_1,\ldots,x_k) = (x_1,\ldots,x_k, 0, \ldots, 0) \in \R^n.
         \end{aligned}
         $$
 
-        <p>Notice the first three pad with copies of the <em>aggregate's own value</em> &mdash; exactly why they satisfy the idempotent-padding property (appending the mean/max/min to the data doesn't change it). Sum instead pads with $0$, its identity element, not its own value: padding with its own running sum would change the answer.</p>
+        <p>The first three pad with copies of the <em>aggregate's own value</em>. This works because appending the max, min or mean of the data to the data doesn't change it. Sum instead pads with $0$, its identity element: padding with its own running sum would change the answer.</p>
 
         <h3>Recursive functions of streaming arrays</h3>
 
-        <p>In all the examples above, there's a specific way to update the result of the operation once a new coordinate is added &mdash; this is exactly what you'd use to define sum, mean, max, etc. on a streamed array rather than a fixed-size vector:</p>
+        <p>In all the examples above, there's a specific way to update the result of the operation once a new coordinate is added. This is exactly what you'd use to define sum, mean, max, etc. on a streamed array rather than a fixed-size vector:</p>
 
         $$
         \begin{aligned}
@@ -139,7 +137,7 @@
         \operatorname{Mean}_{n+1}(x_1, \ldots, x_n, x_{\text{new}}) = \frac{n}{n+1}\operatorname{Mean}_n(x_1, \ldots, x_n) + \frac{1}{n+1}x_{\text{new}}
         $$
 
-        <p>Here, the update ("link") function is a slightly adapted version of the two-variable one, depending on the dimension. This is a consequence of the issue we already noticed: the mean actually depends on the dimension through scaling. If we removed that scaling we'd just be back to the sum. We can fix this by letting the link function itself depend on the dimension &mdash; assume there's a two-variable function</p>
+        <p>Here, the update ("link") function is a slightly adapted version of the two-variable one, depending on the dimension. This is a consequence of the issue we already noticed: the mean actually depends on the dimension through scaling. If we removed that scaling we'd just be back to the sum. We can fix this by letting the link function itself depend on the dimension. Assume there's a two-variable function</p>
 
         $$
         l(a, b; n) \colon \R^2 \times \N \to \R
@@ -156,7 +154,7 @@
         <p>In fact, an example of an operation covered by this more general, non-symmetric version is the Exponential Moving Average (EMA), which discounts earlier coordinates more heavily. EMA is realised via the following link function:</p>
 
         $$
-        \varphi_2(a, b) := (1 - \theta) \cdot a + \theta \cdot b, \qquad \theta \in (0, 1).
+        l(a, b) := (1 - \theta) \cdot a + \theta \cdot b, \qquad \theta \in (0, 1).
         $$
 
         <p>The classical mean is a version of this with $\theta$ changing dynamically with the dimension: $\theta_n = \dfrac{1}{n+1}$.</p>
@@ -185,10 +183,10 @@
 
         <p>Thus this construction uses the dimension through the dimensionless counting operation $N(x)$, in the same way that the mean uses the input size for normalisation.</p>
 
-        <p>This is because for any set of dimensionless operations $\varphi_1, \ldots, \varphi_k$, any functions $f_i \colon \R \to \R$ applied coordinatewise (for $i = 1, \ldots, k$), and any $F \colon \R^k \to \R$, the combined operation</p>
+        <p>The variance is dimensionless because dimensionless operations are closed under composition. For any dimensionless operations $\Phi^{(1)}, \ldots, \Phi^{(k)}$, any functions $f_i \colon \R \to \R$ applied coordinatewise (for $i = 1, \ldots, k$), and any $F \colon \R^k \to \R$, the combined operation</p>
 
         $$
-        \varphi(x) := F\big(\varphi_1(f_1(x)), \ldots, \varphi_k(f_k(x))\big), \quad x \in \bigcup_{n \ge 1} \R^n,
+        \Phi(x) := F\big(\Phi^{(1)}(f_1(x)), \ldots, \Phi^{(k)}(f_k(x))\big), \quad x \in \bigcup_{n \ge 1} \R^n,
         $$
 
         <p>is also dimensionless.</p>
@@ -207,8 +205,8 @@
           \varphi_n(x_1, \ldots, x_n) = \Psi_{1}\Big(\sum_{p=1}^n\psi_{1}(x_p)\Big)\,+\, \Psi_{2}\Big(\sum_{p=1}^n\psi_{2}(x_p)\Big)\,+\ldots+\,\Psi_{k}\Big(\sum_{p=1}^n\psi_{k}(x_p)\Big)
         $$
 
-        <p>By including the counting function $N(x)=\sum_i1$ alongside $S_1(x)=\sum_i x_i$ and $S_2(x)=\sum_i x_i^2$, and combining their outputs using the preceding closure construction $F(\varphi_1,\ldots,\varphi_k)$, we can construct the population-variance operation.</p>
-        <p>We can see that the operations of the above form are permutation invariant in their $n$ inputs. Moreover, the above structure is basically the extension of the <code>sum</code> operator by a fixed number of non-linearities &mdash; it's basically a two-layer network which only uses <code>sum</code> as its linear-layer operation, together with a given set of nonlinearities as activation functions.</p>
+        <p>By including the counting function $N(x)=\sum_i1$ alongside $S_1(x)=\sum_i x_i$ and $S_2(x)=\sum_i x_i^2$, and combining their outputs using the preceding closure construction $F(\Phi^{(1)},\ldots,\Phi^{(k)})$, we can construct the population-variance operation.</p>
+        <p>We can see that the operations of the above form are permutation invariant in their $n$ inputs. Moreover, the above structure is basically the extension of the <code>sum</code> operator by a fixed number of non-linearities: it's a two-layer network which only uses <code>sum</code> as its linear-layer operation, together with a given set of nonlinearities as activation functions.</p>
 
         <p>Schmidt-Hieber [2021; preprint 2020] gives a form which requires fewer functions and is perhaps more relevant for neural networks and our problem. For fixed integers $d, B \ge 2$, there exists a monotone function $\psi \colon [0, 1] \to \R$ such that for any function $f \colon [0, 1]^d \to \R$, one can find an outer function $g \colon \R \to \R$ with</p>
 
@@ -238,7 +236,7 @@
         F \,=\quad  \operatorname{Sum},\quad \operatorname{Mean},\quad \operatorname{Max},\quad \operatorname{Min},\quad \operatorname{Median},\quad \ldots
         $$
 
-        <p>The symmetry means that these operations aren't really functions of vectors, but of the collection of their coordinates &mdash; in other words, the point cloud &mdash; which is mathematically represented by a sum of Dirac measures:</p>
+        <p>The symmetry means that these operations aren't really functions of vectors, but of the collection of their coordinates (the point cloud), which is mathematically represented by a sum of Dirac measures:</p>
 
         $$
         \nu_x = \sum_{i=1}^n \delta_{x_i}.
@@ -250,7 +248,7 @@
         \nu_{x,\theta} = (1-\theta)^{n-1}\delta_{x_1} + (1-\theta)^{n-2}\theta\,\delta_{x_2} + \ldots + \theta\,\delta_{x_n}.
         $$
 
-        <p>Permutation invariance says $\varphi_n$ can't distinguish $x$ from any reordering of $x$; it only ever depends on <em>which values occur and how many times</em>, which is exactly the information $\nu_x$ carries and reordering doesn't change. Dimension-coherence says the rule itself doesn't mention $n$. Put those together and the operation has to factor as</p>
+        <p>Permutation invariance says $\varphi_n$ can't distinguish $x$ from any reordering of $x$; it only ever depends on <em>which values occur and how many times</em>, which is exactly the information $\nu_x$ carries and reordering doesn't change. Being dimensionless says the rule itself doesn't mention $n$. Put those together and the operation has to factor as</p>
 
         $$\varphi_n(x) = F(\nu_x)$$
 
@@ -258,6 +256,18 @@
 
         <p><img src="images/diracs.png" alt="Seven points on a number line, each marked with a tapering Dirac-delta spike; the labels x_6, x_1, x_4, x_2, x_5, x_3, x_7 show the spikes don't depend on the order the points are listed in." /></p>
         <p><em>The point cloud $x_1, \ldots, x_7$ as a sum of Dirac masses, $\nu_x = \sum_i \delta_{x_i}$: one spike per value, however the $x_i$ happen to be labeled or ordered.</em></p>
+
+        <h2>Where this leaves us</h2>
+
+        <p>We have three ways to say that an operation doesn't care about the size of its input:</p>
+
+        <ul>
+          <li><strong>Embeddings:</strong> the functions $\varphi_n$ agree along a system of maps $\R^k \to \R^n$ (padding with zeros for sum, with the aggregate itself for max, min and mean).</li>
+          <li><strong>Recursion:</strong> $\varphi_{n+1}$ is built from $\varphi_n$ and the new coordinate by a link function, possibly depending on $n$. This covers streaming computations and non-symmetric operations like EMA.</li>
+          <li><strong>Measures:</strong> a symmetric operation is a functional of the point cloud $\nu_x$, and the dimension appears only as its total mass.</li>
+        </ul>
+
+        <p>Some questions are still open. Softmax returns a vector, so it does not fit any of the three as stated. The median is symmetric, but we have not shown how to get it from a fixed number of sums. These are left for a later post.</p>
 
         <h2>References</h2>
 
