@@ -653,3 +653,157 @@ main.page:has(.pdf-viewer) h1 {
   font-size: 1.1rem;
   margin: -0.4rem 0 0.4rem;
 }
+
+/* Paper pages: explainer video under the title */
+video.explainer {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 1.5rem 0 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 8px 24px rgba(16, 24, 40, 0.06);
+}
+
+.explainer-note {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 0.6rem 0 2rem;
+}
+
+article blockquote {
+  margin: 1.5rem 0;
+  padding: 0.75rem 1.25rem;
+  background: var(--bg-subtle);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+}
+
+article blockquote p {
+  margin: 0;
+}
+
+/* A figure without a caption: the next paragraph is ordinary text */
+article p.no-caption:has(> img) {
+  margin-bottom: 2rem;
+}
+
+article p.no-caption:has(> img) + p {
+  text-align: left;
+  color: inherit;
+  font-size: inherit;
+  margin: 1em 0;
+}
+
+/* A table used as an image gallery: pictures with a caption under each */
+article table.gallery {
+  table-layout: fixed;
+  margin: 1.5rem 0;
+}
+
+article table.gallery td {
+  border: none;
+  vertical-align: top;
+  padding: 0.5rem 0.75rem;
+}
+
+/* Live cube figures (see blog/infini-cube/embed.js) */
+.cube-demo {
+  max-width: 460px;
+  margin: 2rem auto 0;
+}
+
+.cube-demo + p {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 0.6rem 0 2rem;
+}
+
+.cube-stage {
+  display: flex;
+  justify-content: center;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cube-stage canvas {
+  display: block;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.cube-demo.cube-wide {
+  max-width: 780px;
+}
+
+.cube-stage {
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.cube-stage canvas.cube-net {
+  cursor: default;
+  margin: 8px 0 16px;
+}
+
+.cube-stage canvas.dragging {
+  cursor: grabbing;
+}
+
+.cube-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.cube-btn {
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.3rem 0.8rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cube-btn.cube-primary {
+  color: #fff;
+  background: var(--accent);
+  min-width: 4.5rem;
+}
+
+.cube-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.cube-readout {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cube-slider {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.cube-slider input {
+  flex: 1;
+  accent-color: var(--accent);
+}
