@@ -1,13 +1,14 @@
 :root {
   color-scheme: light;
-  --max-width: 900px;
-  --fg: #1c1e21;
-  --bg: #ffffff;
-  --bg-subtle: #f6f7f9;
-  --muted: #5b6169;
-  --accent: #0056b3;
-  --accent-soft: #e8f0fc;
-  --border: #e3e6ea;
+  --max-width: 760px;
+  --fg: #1a211f;
+  --bg: #f8faf9;
+  --bg-subtle: #edf3f1;
+  --muted: #5a6662;
+  --accent: #0f6658;
+  --accent-soft: #dbeee8;
+  --border: #d9e2de;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
@@ -22,11 +23,11 @@ body {
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   color: var(--fg);
   background: var(--bg);
-  line-height: 1.65;
-  font-size: 16px;
+  line-height: 1.7;
+  font-size: 18px;
 }
 
 .page {
@@ -36,9 +37,8 @@ body {
 }
 
 header.site-header {
-  background: var(--bg-subtle);
   border-bottom: 1px solid var(--border);
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 
 header.site-header .page {
@@ -52,11 +52,10 @@ header.site-header .page {
 }
 
 .site-title {
-  font-weight: 700;
-  font-size: 1.15rem;
+  font-weight: 600;
+  font-size: 1.3rem;
   color: var(--fg);
   text-decoration: none;
-  letter-spacing: -0.01em;
 }
 
 nav.site-nav {
@@ -67,8 +66,11 @@ nav.site-nav {
 nav.site-nav a {
   color: var(--muted);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
   font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
   padding-bottom: 2px;
   border-bottom: 2px solid transparent;
 }
@@ -99,17 +101,36 @@ h3 {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.3rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
 }
 
 h2 {
-  font-size: 1.25rem;
-  color: var(--accent);
-  margin-top: 2.5rem;
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin-top: 3rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--border);
 }
 
 a {
   color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* Small labels and controls stay in the sans face */
+.entry-meta,
+.explainer-note,
+.tag,
+.pill-groups h3,
+.contact-label,
+footer.site-footer,
+.cube-btn,
+.cube-readout,
+.pdf-bar {
+  font-family: var(--font-sans);
 }
 
 /* Hero (home page) */
@@ -124,10 +145,10 @@ a {
 .avatar {
   width: 108px;
   height: 108px;
-  border-radius: 50%;
+  border-radius: 6px;
   flex-shrink: 0;
   object-fit: cover;
-  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+  background: var(--accent);
   color: #fff;
   display: flex;
   align-items: center;
@@ -183,7 +204,7 @@ a {
 
 .entry-title {
   margin: 0 0 0.15rem;
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 600;
 }
 
@@ -198,7 +219,7 @@ a {
 
 .entry-meta {
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   margin: 0;
 }
 
@@ -222,9 +243,9 @@ a {
 
 .tag {
   font-size: 0.75rem;
-  color: var(--accent);
-  background: var(--accent-soft);
-  border-radius: 999px;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 3px;
   padding: 0.15rem 0.65rem;
 }
 
@@ -526,6 +547,27 @@ main.page:has(.pdf-viewer) h1 {
   justify-content: flex-end;
 }
 
+.pdf-listen {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.pdf-play-note {
+  font-size: 0.8rem;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 560px) {
+  .pdf-play-note {
+    display: none;
+  }
+}
+
 .pdf-counter {
   min-width: 4.5rem;
   text-align: center;
@@ -763,7 +805,7 @@ article table.gallery td {
 }
 
 .cube-btn {
-  font: inherit;
+  font-family: var(--font-sans);
   font-size: 0.85rem;
   font-weight: 500;
   padding: 0.3rem 0.8rem;
