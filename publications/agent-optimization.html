@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="A narrated explainer of ARTEMIS: evolutionary optimization of the prompts, tools and parameters of LLM agents, treated as black boxes." />
+    <title>Evolving Excellence: Automated Optimization of LLM-based Agents</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="page">
+        <a class="site-title" href="../">Vardan Voskanyan</a>
+        <nav class="site-nav">
+          <a href="../">Home</a>
+          <a href="./" aria-current="page">Publications</a>
+          <a href="../blog/">Blog</a>
+        </nav>
+      </div>
+    </header>
+    <main class="page">
+      <article>
+        <h1>Evolving Excellence: Automated Optimization of LLM-based Agents</h1>
+        <p class="entry-meta">with Paul Brookes, Rafail Giavrimis, Matthew Truscott, Mina Ilieva, Chrystalla Pavlou and others &middot; arXiv preprint, 2025</p>
+        <div class="entry-links">
+          <a href="https://arxiv.org/abs/2512.09108">arXiv</a>
+        </div>
+
+        <video class="explainer" controls playsinline preload="metadata" poster="files/agent-optimization.jpg">
+          <source src="files/agent-optimization.mp4" type="video/mp4" />
+        </video>
+        <p class="explainer-note">Narrated explainer, a little over three minutes. The voice is synthetic. All numbers are the ones reported in the paper; the search tree and the grid of combinations are schematic.</p>
+
+        <h2>The problem</h2>
+
+        <p>An agent built on a language model is a pipeline, and it has a configuration: prompts, tool descriptions, the choice of models, and numerical parameters such as temperature and timeouts. Small changes to any of these can change performance a lot, and the parts interact. Tuning them by hand typically takes weeks.</p>
+
+        <p>As a search problem it is awkward. The space mixes text, discrete choices and real numbers. There are no gradients. One evaluation is a full benchmark run, which can take minutes to hours. Different prompting strategies give different local optima. And a random edit of a prompt is usually meaningless.</p>
+
+        <h2>The approach</h2>
+
+        <p>Artemis treats the agent as a black box. It needs the code, a benchmark script and a goal in plain language. It finds the components that can be tuned, and it uses the benchmark results and the execution logs as feedback. The agent's architecture is not changed.</p>
+
+        <p>The search is a genetic algorithm whose operators are language models. A mutation rewrites a component and keeps it meaningful, and a crossover merges what worked in two candidates. Evaluation is hierarchical: cheap checks, such as scoring by a language model, filter most candidates, and only the promising ones are run on the real benchmark.</p>
+
+        <p>There are two strategies. Local optimization evolves each component on its own, which suits components that do not interact much. Global optimization uses Bayesian optimization to search over combinations of component versions, for the cases where components only work well together.</p>
+
+        <h2>The results</h2>
+
+        <table>
+          <thead>
+            <tr><th>Agent</th><th>Task</th><th>Metric</th><th>Baseline</th><th>Optimized</th><th>Change</th><th>p-value</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>ALE Agent</td><td>competitive programming (AtCoder Heuristic Contest)</td><td>acceptance rate</td><td>0.660</td><td>0.750</td><td>+13.6%</td><td>0.10</td></tr>
+            <tr><td>Mini-SWE Agent</td><td>code optimization (SWE-Perf)</td><td>performance score</td><td>0.891</td><td>0.981</td><td>+10.1%</td><td>&lt; 0.005</td></tr>
+            <tr><td>CrewAI Agent</td><td>mathematical reasoning (Math Odyssey)</td><td>tokens per problem</td><td>12033</td><td>7330</td><td>&minus;39.1%</td><td>&lt; 10<sup>&minus;6</sup></td></tr>
+            <tr><td>MathTales-Teacher (Qwen2.5-7B)</td><td>school mathematics (GSM8K)</td><td>accuracy</td><td>0.59</td><td>0.81</td><td>+37.3%</td><td>&lt; 0.001</td></tr>
+          </tbody>
+        </table>
+
+        <p>The results are mixed in an informative way. The ALE improvement is not statistically significant. For the CrewAI agent the lower token cost came with a drop in accuracy, from 0.82 to 0.76. The search is expensive: the ALE experiments took 671.7 hours of computation in total. Automated tuning helped most where the starting configuration was weak and the metric was clear.</p>
+
+        <h2>What we take from it</h2>
+
+        <p>An agent's configuration can be optimized automatically, as a black box, with no change to its architecture and no hand-written fitness function. Where there was room to improve, the gains were substantial, and where accuracy was already high the cost could be cut instead. The method worked for commercial models and for a small open-source model run locally. Tuning an agent can be a search, not weeks of trial and error.</p>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <div class="page">&copy; 2026 Vardan Voskanyan</div>
+    </footer>
+  </body>
+</html>
