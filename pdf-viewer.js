@@ -5,6 +5,9 @@
 //   <script type="module" src="../pdf-viewer.js"></script>
 //
 // data-download="true" shows a download icon; omit it to hide it.
+// data-narration="files/x-audio" data-narrated="12" adds a play button: slides
+// 1 to 12 have a clip files/x-audio/01.mp3 ... 12.mp3, and playing advances
+// to the next slide when a clip ends.
 // Link to a page with #page=N (applies to the first viewer on the page).
 
 import * as pdfjsLib from "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.min.mjs";
@@ -19,6 +22,8 @@ const ICONS = {
   expand: '<path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/>',
   shrink: '<path d="M8 3v3a2 2 0 0 1-2 2H3M21 8h-3a2 2 0 0 1-2-2V3M3 16h3a2 2 0 0 1 2 2v3M16 21v-3a2 2 0 0 1 2-2h3"/>',
   download: '<path d="M12 3v12M7 10l5 5 5-5M5 21h14"/>',
+  play: '<path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/>',
+  pause: '<path d="M8 5v14M16 5v14" stroke-width="2.6"/>',
 };
 
 function icon(name) {
@@ -65,8 +70,11 @@ async function initViewer(root, isPrimary) {
   if (root.dataset.download === "true") {
     tools.push(el("a", { class: "pdf-icon", href: src, download: "", "aria-label": "Download PDF", title: "Download PDF", html: icon("download") }));
   }
+  const narrated = Number(root.dataset.narrated) || 0;
+  const playButton = narrated ? iconButton("play", "Play narration", { class: "pdf-icon pdf-play" }) : null;
+  const playNote = narrated ? el("span", { class: "pdf-play-note", text: "Play with narration" }) : null;
   const bar = el("div", { class: "pdf-bar" }, [
-    el("span"),
+    el("div", { class: "pdf-listen" }, playButton ? [playButton, playNote] : []),
     el("div", { class: "pdf-nav" }, [prev, counter, next]),
     el("div", { class: "pdf-tools" }, tools),
   ]);
@@ -154,6 +162,7 @@ async function initViewer(root, isPrimary) {
     current = n;
     const token = ++showToken;
 
+    if (playing) speak(n);
     counter.textContent = `${n} / ${count}`;
     prev.disabled = sidePrev.disabled = n <= 1;
     next.disabled = sideNext.disabled = n >= count;
@@ -169,6 +178,46 @@ async function initViewer(root, isPrimary) {
     for (const k of [n + 1, n - 1, n + 2]) {
       if (k >= 1 && k <= count) renderSlide(k, boxW, boxH);
     }
+  }
+
+  // Narration: one clip per slide. While playing, the deck advances when a
+  // clip ends, and moving to another slide by hand switches to its clip.
+  const audio = narrated ? new Audio() : null;
+  let playing = false;
+  let gapTimer;
+  const clipOf = (n) => `${root.dataset.narration}/${String(n).padStart(2, "0")}.mp3`;
+  function setPlaying(on) {
+    playing = on;
+    clearTimeout(gapTimer);
+    if (!on) audio.pause();
+    playButton.innerHTML = icon(on ? "pause" : "play");
+    playButton.setAttribute("aria-label", on ? "Pause narration" : "Play narration");
+    playButton.title = playButton.getAttribute("aria-label");
+    playButton.classList.toggle("is-active", on);
+  }
+  function speak(n) {
+    clearTimeout(gapTimer);
+    if (n > narrated) {
+      setPlaying(false);
+      playNote.textContent = `Narration covers slides 1 to ${narrated}`;
+      return;
+    }
+    playNote.textContent = "Play with narration";
+    audio.src = clipOf(n);
+    audio.play().catch(() => setPlaying(false));
+  }
+  if (audio) {
+    audio.addEventListener("ended", () => {
+      if (!playing) return;
+      if (current >= count) { setPlaying(false); return; }
+      gapTimer = setTimeout(() => show(current + 1), 700);
+    });
+    playButton.addEventListener("click", () => {
+      if (playing) { setPlaying(false); return; }
+      setPlaying(true);
+      if (audio.src && audio.src.endsWith(clipOf(current)) && !audio.ended && audio.currentTime > 0) audio.play();
+      else speak(current);
+    });
   }
 
   const step = (d) => show(current + d);
